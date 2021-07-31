@@ -5,16 +5,12 @@ article {
   padding: 1em;
   
 
-  .post_user_profile {
+  .post-user-profile {
     display: flex;
     align-items: center;
-
-    .post_user_avatar {
-      height: 80px;
-    }
   }
   
-  .post_content {
+  .post-content {
     display: flex;
     justify-content: space-between;
   }

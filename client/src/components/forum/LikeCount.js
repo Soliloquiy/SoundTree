@@ -4,8 +4,8 @@ import "./LikeCount.scss"
 export default function LikeCount() {
 
   return (
-    <div className="like_count">
-    <button className="like_button"> Like </button>
+    <div className="like-count">
+    <button className="like-button"> Like </button>
     <span>50</span>
     </div>
   )
