@@ -1,0 +1,22 @@
+article {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 80%;
+  padding: 1em;
+  
+
+  .post_user_profile {
+    display: flex;
+    align-items: center;
+
+    .post_user_avatar {
+      height: 80px;
+    }
+  }
+  
+  .post_content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
