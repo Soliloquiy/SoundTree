@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import "./GenreList.scss"
 
@@ -11,6 +11,14 @@ import "./GenreList.scss"
 
 
 export default function GenreList(props) {
+  
+  const [state, setState] = useState({
+    genre: "",
+    genres: [],
+  })
+
+  const setGenre = (genre) => setState({...state, genre})
+  
   return (
     <ul>
       {props.genres.map((item) => {
@@ -18,8 +26,9 @@ export default function GenreList(props) {
           <div className="App">
              <li
                 class="genre-list__item"
+                onClick={() => setGenre(item.name)}
               >
-                <h2 class="text--regular">{item.name}</h2>
+                <h2 class="text--regular">{item.name} fi</h2>
               </li>
           </div>
         );

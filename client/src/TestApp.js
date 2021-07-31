@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component } from 'react';
 import './App.css';
 import GenreList from './GenreList';
 import SubGenreList from './SubGenreList';
@@ -11,6 +11,7 @@ class App extends Component {
     }
   }
 
+  
 
 
   
@@ -84,6 +85,8 @@ class App extends Component {
           "HipHop 6"
       ]}
     ]
+
+    
 
     return (
       <main className="layout">
