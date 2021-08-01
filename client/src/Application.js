@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import GenreList from './GenreList';
 import SubGenreList from './SubGenreList';
@@ -49,10 +49,17 @@ export default function Application(props) {
   ]
 
   const [state, setState] = useState({
-    genre: "",
+    genre: "Metal",
     genres: genres,
     subGenres: []
   })
+
+  const setSubGenre = (subGenres) => setState((prev) => ({
+    ...prev,
+    subGenres: subGenres
+  }));
+
+  
 
   // const setGenre = (genre) => setState({...state, genre})
 
@@ -64,15 +71,27 @@ export default function Application(props) {
     }
   
     const subGenres = foundGenre.sub_genres;
-    console.log(subGenres)
+    
+    
+    return subGenres
   
-    return subGenres.map((subName) => state.subGenres[subName]);
+      
+      // console.log(subGenres.map((subName) => state.subGenres[subName]))
   }
 
-  console.log("here")
-  console.log(state.genres)
+
+  useEffect(() => {
+    const currentSubGenres = getSubGenresForGenre(state, state.genre)
+    setState((prev) => ({
+      ...prev,
+      subGenres: currentSubGenres
+    }))
+  }, [state.genre]);
+
+  // const setGenre = (genre) => setState({ ...state, genre });
+  // setGenre("Metal")
   console.log(state.subGenres)
-  getSubGenresForGenre(state, "Metal")
+
   
 
   return (
