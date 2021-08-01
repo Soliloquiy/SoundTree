@@ -11,6 +11,12 @@ import "./SubGenreList.scss"
 
 
 export default function SubGenreList(props) {
+  console.log('here')
+  console.log(props.genre)
+
+  if (!props.genre) {
+    return []
+  } else
   return (
     <ul>
       {props.genres.map((item) => {

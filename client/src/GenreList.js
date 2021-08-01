@@ -22,7 +22,7 @@ export default function GenreList(props) {
                 key={item.name}
                 className="genre-list__item"
                 // selected={item.name === state.genre}
-                // onClick={() => setGenre(props.name)}
+                onClick={() => props.setGenre(item.name)}
               >
                 <h2 class="text--regular">{item.name}</h2>
               </li>

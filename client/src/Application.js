@@ -49,7 +49,7 @@ export default function Application(props) {
   ]
 
   const [state, setState] = useState({
-    genre: "Metal",
+    genre: "",
     genres: genres,
     subGenres: []
   })
@@ -63,41 +63,37 @@ export default function Application(props) {
 
   // const setGenre = (genre) => setState({...state, genre})
 
-  function getSubGenresForGenre(state, genreName) {
+  function getSubGenresWithGenre(state, genreName) {
     const foundGenre = state.genres.filter((genre) => genre.name === genreName)[0];
   
     if (!genreName || !foundGenre) {
       return [];
     }
   
-    const subGenres = foundGenre.sub_genres;
+    const subGenres = foundGenre;
     
     
     return subGenres
-  
-      
-      // console.log(subGenres.map((subName) => state.subGenres[subName]))
   }
 
-
+  const currentSubGenres = getSubGenresWithGenre(state, state.genre)
   useEffect(() => {
-    const currentSubGenres = getSubGenresForGenre(state, state.genre)
+    
     setState((prev) => ({
       ...prev,
-      subGenres: currentSubGenres
+      subGenres: currentSubGenres.sub_genres
     }))
   }, [state.genre]);
 
-  // const setGenre = (genre) => setState({ ...state, genre });
-  // setGenre("Metal")
+  const setGenre = (genre) => setState({ ...state, genre });
   console.log(state.subGenres)
 
   
 
   return (
     <main className="layout">
-      <GenreList genres={genres} /> <br></br>
-      <SubGenreList genres={genres} />
+      <GenreList setGenre={setGenre} genres={genres}  /> <br></br>
+      <SubGenreList genre={state.genre} genres={[currentSubGenres]} />
     </main>
   )
 
