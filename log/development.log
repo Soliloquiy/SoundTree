@@ -1,0 +1,1833 @@
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "rails_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "rails_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "3b357455413b7ac29fae464d06c56bd93576bab2"], ["created_at", "2021-07-31 18:21:01.594236"], ["updated_at", "2021-07-31 18:21:01.594236"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2021-07-31 18:21:01.655359"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-07-31 18:21:01.659929"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "3b357455413b7ac29fae464d06c56bd93576bab2"], ["created_at", "2021-07-31 18:21:01.665481"], ["updated_at", "2021-07-31 18:21:01.665481"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3312665787932193105)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20210731014421)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210731014421"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGenres (20210731014446)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210731014446"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSubgenres (20210731014456)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "subgenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210731014456"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20210731014510)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210731014510"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsergenres (20210731014601)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "usergenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210731014601"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3312665787932193105)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "rails_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "rails_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "subgenres" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "subgenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "usergenres" CASCADE[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "usergenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "464424cd82e6c7657e7b2b16d2a44b1e6d4699a6"], ["updated_at", "2021-07-31 18:21:35.405060"], ["key", "schema_sha1"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "subgenres" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "subgenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "usergenres" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "usergenres" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210731014601)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210731014421),
+(20210731014446),
+(20210731014456),
+(20210731014510);
+
+[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2021-07-31 18:21:35.458446"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-07-31 18:21:35.473402"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "464424cd82e6c7657e7b2b16d2a44b1e6d4699a6"], ["updated_at", "2021-07-31 18:21:35.479186"], ["key", "schema_sha1"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/data" for 10.0.2.2 at 2021-07-31 18:25:57 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/data"):
+  
+Started GET "/api/data" for 10.0.2.2 at 2021-07-31 18:26:24 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/data"):
+  
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:17 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 1905)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:19 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:20 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1852)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:20 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1853)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:20 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:21 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1853)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:21 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:21 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:21 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:30:27 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1850)
+
+
+  
+NameError (uninitialized constant Api::GenresController::Category):
+  
+app/controllers/api/genres_controller.rb:4:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:49:43 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb89c7e60 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.9ms)
+Completed 200 OK in 648ms (Views: 123.4ms | ActiveRecord: 0.0ms | Allocations: 12688)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 18:50:04 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb93c48f0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (5.09ms)
+Completed 200 OK in 240ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4569)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:09:28 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb89700e8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.85ms)
+Completed 200 OK in 303ms (Views: 69.0ms | Allocations: 8627)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:09:34 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb933c5e0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.71ms)
+Completed 200 OK in 235ms (Views: 4.0ms | Allocations: 4755)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:22:11 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003716058 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.96ms)
+Completed 200 OK in 293ms (Views: 53.9ms | Allocations: 15189)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:25:51 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8d77088 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.56ms)
+Completed 200 OK in 2760ms (Views: 4.7ms | Allocations: 11445)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:27:06 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc0df560 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (3.13ms)
+Completed 200 OK in 308ms (Views: 4.3ms | Allocations: 11118)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:27:49 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b8b7b8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (3.17ms)
+Completed 200 OK in 257ms (Views: 4.1ms | Allocations: 11238)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:19 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb91f2e50 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.82ms)
+Completed 200 OK in 241ms (Views: 2.8ms | Allocations: 11325)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:20 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003830c18 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.09ms)
+Completed 200 OK in 292ms (Views: 2.7ms | Allocations: 11148)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:21 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00000000047e3a48 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.05ms)
+Completed 200 OK in 259ms (Views: 2.1ms | Allocations: 11217)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:21 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004c7ceb0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.99ms)
+Completed 200 OK in 238ms (Views: 1.9ms | Allocations: 11173)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:21 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8e0add8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.83ms)
+Completed 200 OK in 253ms (Views: 1.8ms | Allocations: 11470)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:29:58 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb93bc5b0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.51ms)
+Completed 200 OK in 278ms (Views: 3.9ms | Allocations: 11446)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 19:30:11 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc13f6b8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (6.8ms)
+Completed 200 OK in 254ms (Views: 8.0ms | Allocations: 11070)
+
+
+Started GET "/api/babel/parser/lib/index.js" for 10.0.2.2 at 2021-07-31 19:31:29 +0000
+Started GET "/api/babel/core/lib/transformation/normalize-file.js" for 10.0.2.2 at 2021-07-31 19:31:29 +0000
+Started GET "/api/babel/core/lib/transform.js" for 10.0.2.2 at 2021-07-31 19:31:29 +0000
+Started GET "/api/babel/core/lib/transformation/index.js" for 10.0.2.2 at 2021-07-31 19:31:29 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/babel/parser/lib/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/api/babel/core/lib/transformation/index.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/api/babel/core/lib/transformation/normalize-file.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/api/babel/core/lib/transform.js"):
+  
+Started GET "/api/babel/parser/lib/index.js" for 10.0.2.2 at 2021-07-31 19:58:11 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/babel/parser/lib/index.js"):
+  
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:03:00 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8e19fe0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.84ms)
+Completed 200 OK in 760ms (Views: 2.9ms | Allocations: 17029)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:04:31 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb93c4b70 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.89ms)
+Completed 200 OK in 269ms (Views: 1.9ms | Allocations: 11408)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:05:27 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc14a428 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (6.99ms)
+Completed 200 OK in 260ms (Views: 8.3ms | Allocations: 11216)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:14 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003e9edc0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.0ms)
+Completed 200 OK in 255ms (Views: 2.0ms | Allocations: 11084)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b8d9a0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.84ms)
+Completed 200 OK in 324ms (Views: 1.6ms | Allocations: 11083)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8cd8a50 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.04ms)
+Completed 200 OK in 282ms (Views: 2.1ms | Allocations: 11409)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb917d6f0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.0ms)
+Completed 200 OK in 242ms (Views: 2.1ms | Allocations: 11452)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:17 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc0b48b0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.26ms)
+Completed 200 OK in 238ms (Views: 2.3ms | Allocations: 11173)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:11:36 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003433ca0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.02ms)
+Completed 200 OK in 251ms (Views: 1.8ms | Allocations: 11376)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:14:27 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004a09160 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.48ms)
+Completed 200 OK in 287ms (Views: 2.8ms | Allocations: 11243)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:16:52 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb89a7c78 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.9ms)
+Completed 200 OK in 270ms (Views: 1.9ms | Allocations: 11195)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:17:14 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb90d0e00 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.0ms)
+Completed 200 OK in 309ms (Views: 2.0ms | Allocations: 11253)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:17:48 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc091a18 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.81ms)
+Completed 200 OK in 320ms (Views: 1.6ms | Allocations: 11211)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:18:10 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00000000032b5ea0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.87ms)
+Completed 200 OK in 307ms (Views: 1.9ms | Allocations: 11203)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:18:15 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004976590 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.07ms)
+Completed 200 OK in 274ms (Views: 2.5ms | Allocations: 11321)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:18:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8913050 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.91ms)
+Completed 200 OK in 237ms (Views: 2.0ms | Allocations: 11235)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:18:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb9012e50 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.47ms)
+Completed 200 OK in 271ms (Views: 2.8ms | Allocations: 11117)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:18:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ec003f4d0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.87ms)
+Completed 200 OK in 259ms (Views: 1.8ms | Allocations: 11049)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:19:56 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00000000037a00f0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.87ms)
+Completed 200 OK in 257ms (Views: 1.9ms | Allocations: 11338)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:20:34 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x000000000485c678 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.92ms)
+Completed 200 OK in 302ms (Views: 2.3ms | Allocations: 11299)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:20:41 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8896b18 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.44ms)
+Completed 200 OK in 250ms (Views: 3.0ms | Allocations: 11089)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:20:46 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8f6f9f8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.89ms)
+Completed 200 OK in 239ms (Views: 1.8ms | Allocations: 11404)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:28:49 +0000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::GenresController):
+  
+actionpack (6.1.4) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:29:11 +0000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::GenresController):
+  
+actionpack (6.1.4) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:29:19 +0000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::GenresController):
+  
+actionpack (6.1.4) lib/abstract_controller/base.rb:160:in `process'
+actionpack (6.1.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.1.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:29:39 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc0c47d8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.93ms)
+Completed 200 OK in 344ms (Views: 89.6ms | Allocations: 15177)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:30:16 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b9cdb0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.91ms)
+Completed 200 OK in 288ms (Views: 67.7ms | Allocations: 8440)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:30:24 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb89a47f8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.14ms)
+Completed 200 OK in 236ms (Views: 2.1ms | Allocations: 4758)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:31:33 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8e678f8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.87ms)
+Completed 200 OK in 229ms (Views: 1.7ms | Allocations: 4613)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:32:45 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb9112698 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.9ms)
+Completed 200 OK in 219ms (Views: 1.8ms | Allocations: 4688)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:36:46 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Artist:0x00007f2ebc133d40 @followers={"href"=>nil, "total"=>6515018}, @genres=["album rock", "hard rock", "metal", "nwobhm", "rock"], @images=[{"height"=>640, "url"=>"https://i.scdn.co/image/ab6761610000e5ebdc52c8e309e46aa8430a0fa0", "width"=>640}, {"height"=>320, "url"=>"https://i.scdn.co/image/ab67616100005174dc52c8e309e46aa8430a0fa0", "width"=>320}, {"height"=>160, "url"=>"https://i.scdn.co/image/ab6761610000f178dc52c8e309e46aa8430a0fa0", "width"=>160}], @name="Iron Maiden", @popularity=78, @top_tracks={}, @external_urls={"spotify"=>"https://open.spotify.com/artist/6mdiAmATAx73kdxrNrnlao"}, @href="https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao", @id="6mdiAmATAx73kdxrNrnlao", @type="artist", @uri="spotify:artist:6mdiAmATAx73kdxrNrnlao">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.94ms)
+Completed 200 OK in 333ms (Views: 86.6ms | Allocations: 8496)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:38:10 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 756)
+
+
+  
+NoMethodError (undefined method `list' for RSpotify::Artist:Class):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:38:56 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b7fb48 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.89ms)
+Completed 200 OK in 298ms (Views: 65.0ms | Allocations: 8662)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:51:20 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 250ms (Allocations: 1760)
+
+
+  
+RestClient::NotFound (404 Not Found):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 20:52:49 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 1227)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 21:03:57 +0000
+  
+SyntaxError (/vagrant/lighthouse-final-project/SoundTree/app/controllers/api/genres_controller.rb:7: syntax error, unexpected '(', expecting end
+... = RSpotify::Catefory.list // ('Greatest Rock Tunes Ever')
+...                              ^
+/vagrant/lighthouse-final-project/SoundTree/app/controllers/api/genres_controller.rb:7: syntax error, unexpected ')', expecting end
+...// ('Greatest Rock Tunes Ever')
+...                              ^):
+  
+app/controllers/api/genres_controller.rb:7: syntax error, unexpected '(', expecting end
+app/controllers/api/genres_controller.rb:7: syntax error, unexpected ')', expecting end
+app/controllers/api/genres_controller.rb:7: syntax error, unexpected '(', expecting end
+app/controllers/api/genres_controller.rb:7: syntax error, unexpected ')', expecting end
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 21:04:20 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 8ms (Allocations: 1710)
+
+
+  
+NameError (uninitialized constant RSpotify::Catefory
+Did you mean?  RSpotify::Category):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 21:05:06 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ec002deb0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.9ms)
+Completed 200 OK in 740ms (Views: 77.9ms | Allocations: 11153)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 21:16:02 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003f6cb58 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (4.62ms)
+Completed 200 OK in 285ms (Views: 72.8ms | Allocations: 8376)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:18:25 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:27:16 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:30:00 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:32:33 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:32:34 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:33:53 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:34:00 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:36:43 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00007f2eb8e9a730 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00007f2eb8e9a6b8 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.26ms)
+Completed 200 OK in 820ms (Views: 84.0ms | Allocations: 12952)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:38:33 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x0000000002f12578 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x0000000002f12500 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.56ms)
+Completed 200 OK in 833ms (Views: 96.7ms | Allocations: 12837)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 21:53:51 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00007f2eb88442f0 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00007f2eb88442c8 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.3ms)
+Completed 200 OK in 792ms (Views: 74.3ms | Allocations: 12379)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 21:55:14 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb9025000 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.84ms)
+Completed 200 OK in 250ms (Views: 22.3ms | Allocations: 5808)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 22:20:14 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ec003e120 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.9ms)
+Completed 200 OK in 217ms (Views: 2.0ms | Allocations: 4623)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-07-31 22:21:15 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00000000025f50d0 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00000000025f4f90 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.48ms)
+Completed 200 OK in 792ms (Views: 2.5ms | Allocations: 8716)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:33:17 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003971d48 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (5.16ms)
+Completed 200 OK in 1584ms (Views: 72.9ms | Allocations: 11095)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:36:04 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 240ms (Allocations: 1655)
+
+
+  
+RestClient::BadRequest (400 Bad Request):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:36:36 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004bc11b0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.85ms)
+Completed 200 OK in 787ms (Views: 59.5ms | Allocations: 8791)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:37:53 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb939dfe8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.96ms)
+Completed 200 OK in 301ms (Views: 78.1ms | Allocations: 12854)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:38:50 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 230ms (Allocations: 1707)
+
+
+  
+RestClient::BadRequest (400 Bad Request):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:39:11 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b6f2c0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (7.95ms)
+Completed 200 OK in 332ms (Views: 91.6ms | Allocations: 12730)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:39:40 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ea80767e0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (16.2ms)
+Completed 200 OK in 233ms (Views: 17.3ms | Allocations: 8670)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:41:19 +0000
+Processing by Api::GenresController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RSpotify::Category (0.12ms)
+Completed 200 OK in 326ms (Views: 80.9ms | Allocations: 5733)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:42:17 +0000
+Processing by Api::GenresController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RSpotify::Category (0.11ms)
+Completed 200 OK in 333ms (Views: 80.3ms | Allocations: 5544)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:53:06 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 1519)
+
+
+  
+NameError (undefined local variable or method `mil' for #<Api::GenresController:0x007f2ea80742b0>
+Did you mean?  nil):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:53:50 +0000
+Processing by Api::GenresController#index as HTML
+Completed 500 Internal Server Error in 8ms (Allocations: 1517)
+
+
+  
+NameError (undefined local variable or method `mil' for #<Api::GenresController:0x007f2ebc1592c0>
+Did you mean?  nil):
+  
+app/controllers/api/genres_controller.rb:7:in `index'
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:56:21 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004b8e7d8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.01ms)
+Completed 200 OK in 289ms (Views: 53.2ms | Allocations: 12894)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:57:37 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004801368 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/54841f7d6a774ef096477c99c23f0cf1.jpeg", "width"=>nil}], @name="Anime", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/anime", @id="anime", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.42ms)
+Completed 200 OK in 327ms (Views: 94.3ms | Allocations: 7383)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-07-31 23:59:03 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc1607f0 @icons=[{"height"=>274, "url"=>"https://t.scdn.co/media/original/mood-274x274_976986a31ac8c49794cbdc7246fd5ad7_274x274.jpg", "width"=>274}], @name="Mood", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/mood", @id="mood", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.14ms)
+Completed 200 OK in 301ms (Views: 59.5ms | Allocations: 12807)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:01:02 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004c73900 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/9c16a477e6164805a249e646cf4a4331", "width"=>nil}], @name="Happier Than Ever", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/happier_than_ever-page", @id="happier_than_ever-page", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.02ms)
+Completed 200 OK in 295ms (Views: 55.8ms | Allocations: 12949)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:02:44 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb94df8e8 @icons=[{"height"=>274, "url"=>"https://t.scdn.co/media/derived/comedy-274x274_d07fcbc1202f00f8684f37742d0a4f2f_0_0_274_274.jpg", "width"=>274}], @name="Comedia", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/comedy", @id="comedy", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.28ms)
+Completed 200 OK in 307ms (Views: 54.6ms | Allocations: 6674)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:03:24 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003cb9b68 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/c5a025526f394d85ae68442afa5cd405.png", "width"=>nil}], @name="Joe Rogan Experience", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/jre_podcast", @id="jre_podcast", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.63ms)
+Completed 200 OK in 283ms (Views: 52.3ms | Allocations: 7439)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:09:29 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb88ea858 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.0ms)
+Completed 200 OK in 284ms (Views: 60.3ms | Allocations: 12749)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:12:36 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc0b1980 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.42ms)
+Completed 200 OK in 420ms (Views: 68.7ms | Allocations: 29553)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:19:47 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb8fad898 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.01ms)
+Completed 200 OK in 386ms (Views: 65.9ms | Allocations: 29657)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:20:07 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ea84a75a8 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.09ms)
+Completed 200 OK in 688ms (Views: 3.1ms | Allocations: 25230)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:21:26 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc1ac6f0 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.18ms)
+Completed 200 OK in 399ms (Views: 52.1ms | Allocations: 29625)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:21:27 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2eb0560500 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.61ms)
+Completed 200 OK in 249ms (Views: 3.6ms | Allocations: 25507)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:21:34 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000003db7088 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.25ms)
+Completed 200 OK in 382ms (Views: 3.8ms | Allocations: 25617)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 00:23:44 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00007f2ebc0dae48 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00007f2ebc0dae20 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.3ms)
+Completed 200 OK in 790ms (Views: 56.6ms | Allocations: 12697)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 00:30:20 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00007f2ea81b1948 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00007f2ea81b1920 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.28ms)
+Completed 200 OK in 832ms (Views: 65.6ms | Allocations: 12945)
+
+
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:30:52 +0000
+Processing by Api::RecommendationsController#index as HTML
+Completed 500 Internal Server Error in 220ms (Allocations: 2127)
+
+
+  
+RestClient::BadRequest (400 Bad Request):
+  
+app/controllers/api/recommendations_controller.rb:3:in `index'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:32:57 +0000
+Processing by Api::RecommendationsController#index as HTML
+Completed 500 Internal Server Error in 223ms (Allocations: 1639)
+
+
+  
+RestClient::BadRequest (400 Bad Request):
+  
+app/controllers/api/recommendations_controller.rb:3:in `index'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:35:11 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:93:in `execute_if_updated'
+activerecord (6.1.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:43:57 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:45:55 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:49:05 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:50:21 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:50:56 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:52:14 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:54:26 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:57:33 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 00:57:45 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 00:58:19 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 00:58:23 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 00:58:24 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 00:59:51 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20210801003447_create_recommendations.rb
+
+
+):
+  
+activerecord (6.1.4) lib/active_record/migration.rb:625:in `check_pending!'
+activerecord (6.1.4) lib/active_record/migration.rb:590:in `block (2 levels) in call'
+activesupport (6.1.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (6.1.4) lib/active_record/migration.rb:595:in `block in call'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.1.4) lib/rails/engine.rb:539:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3312665787932193105)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecommendations (20210801003447)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "recommendations" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210801003447"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3312665787932193105)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 01:01:00 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007f2ebc31dd40 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.97ms)
+Completed 200 OK in 300ms (Views: 58.6ms | ActiveRecord: 0.0ms | Allocations: 12707)
+
+
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 01:03:10 +0000
+Processing by Api::RecommendationsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RSpotify::Recommendations (15.81ms)
+Completed 200 OK in 570ms (Views: 118.4ms | ActiveRecord: 0.0ms | Allocations: 66659)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3312665787932193105)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3312665787932193105)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 01:30:22 +0000
+Processing by Api::RecommendationsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RSpotify::Recommendations (23.38ms)
+Completed 200 OK in 1056ms (Views: 91.3ms | Allocations: 65530)
+
+
+Started GET "/api/recommendations" for 10.0.2.2 at 2021-08-01 01:30:35 +0000
+Processing by Api::RecommendationsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with RSpotify::Recommendations (16.22ms)
+Completed 200 OK in 496ms (Views: 17.2ms | Allocations: 62825)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 01:31:12 +0000
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x00007f2ebc1f9158 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x00007f2ebc1f9130 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.37ms)
+Completed 200 OK in 3266ms (Views: 20.2ms | Allocations: 9778)
+
+
+Started GET "/api/users" for 10.0.2.2 at 2021-08-01 16:45:41 +0000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#index as HTML
+No serializer found for resource: #<RSpotify::Playlist:0x0000000004b700f8 @collaborative=false, @description="", @followers=nil, @images=[], @name="My Playlist #7", @public=true, @snapshot_id="MSwyOGUxZTYwY2Y5YjBkMzFiMzQ4YWUwNGExYWY1MGRlZDI5Njg3YzI0", @total=0, @owner=#<RSpotify::User:0x0000000004b700d0 @birthdate=nil, @country=nil, @display_name="Phil Milly", @email=nil, @followers=nil, @images=nil, @product=nil, @external_urls={"spotify"=>"https://open.spotify.com/user/phil_bsg"}, @href="https://api.spotify.com/v1/users/phil_bsg", @id="phil_bsg", @type="user", @uri="spotify:user:phil_bsg">, @tracks_cache=nil, @tracks_added_at=nil, @tracks_added_by=nil, @tracks_is_local=nil, @external_urls={"spotify"=>"https://open.spotify.com/playlist/4wOcZ5JMPBDrXU38Z3FUCe"}, @href="https://api.spotify.com/v1/playlists/4wOcZ5JMPBDrXU38Z3FUCe", @id="4wOcZ5JMPBDrXU38Z3FUCe", @type="playlist", @uri="spotify:playlist:4wOcZ5JMPBDrXU38Z3FUCe", @path="users/phil_bsg/playlists/4wOcZ5JMPBDrXU38Z3FUCe">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (4.21ms)
+Completed 200 OK in 910ms (Views: 91.3ms | ActiveRecord: 0.0ms | Allocations: 16695)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:46:10 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007fdf541a7580 @icons=[{"height"=>275, "url"=>"https://t.scdn.co/media/derived/toplists_11160599e6a04ac5d6f2757f5511778f_0_0_275_275.jpg", "width"=>275}], @name="Top Lists", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/toplists", @id="toplists", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.2ms)
+Completed 200 OK in 337ms (Views: 75.7ms | ActiveRecord: 0.0ms | Allocations: 13065)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:47:22 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004bf4fb0 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/c5a025526f394d85ae68442afa5cd405.png", "width"=>nil}], @name="Joe Rogan Experience", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/jre_podcast", @id="jre_podcast", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.6ms)
+Completed 200 OK in 288ms (Views: 71.6ms | ActiveRecord: 0.0ms | Allocations: 7325)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:50:28 +0000
+Processing by Api::GenresController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 253ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 3540)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:50:44 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00000000035ac348 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/c6677aa51acf4121b66b9d1f231bd427.png", "width"=>nil}], @name="RADAR", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/radar", @id="radar", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.67ms)
+Completed 200 OK in 264ms (Views: 54.4ms | ActiveRecord: 0.0ms | Allocations: 7669)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:51:28 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x0000000004a0a290 @icons=[{"height"=>nil, "url"=>"https://t.scdn.co/images/04da469dd7be4dab96659aa1fa9f0ac9.jpeg", "width"=>nil}], @name="At Home", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/at_home", @id="at_home", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.67ms)
+Completed 200 OK in 298ms (Views: 72.2ms | ActiveRecord: 0.0ms | Allocations: 11246)
+
+
+Started GET "/api/genres" for 10.0.2.2 at 2021-08-01 16:52:13 +0000
+Processing by Api::GenresController#index as HTML
+No serializer found for resource: #<RSpotify::Category:0x00007fdf4c132648 @icons=[{"height"=>274, "url"=>"https://t.scdn.co/media/original/mood-274x274_976986a31ac8c49794cbdc7246fd5ad7_274x274.jpg", "width"=>274}], @name="Mood", @external_urls=nil, @href="https://api.spotify.com/v1/browse/categories/mood", @id="mood", @type=nil, @uri=nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (2.14ms)
+Completed 200 OK in 294ms (Views: 62.1ms | ActiveRecord: 0.0ms | Allocations: 12682)
+
+
