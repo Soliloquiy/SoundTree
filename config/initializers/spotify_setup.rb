@@ -1,3 +1,3 @@
 require 'rspotify'
 
-RSpotify::authenticate(CLIENT_ID, CLIENT_SECRET)
+RSpotify::authenticate(ENV["client_id"], ENV["client_secret"])
