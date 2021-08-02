@@ -3,11 +3,25 @@ require 'rspotify'
 
 class Api::UsersController < ApplicationController
 
-  # Now you can access playlists in detail, browse featured content and more
-  def index
-    RSpotify.authenticate(ENV["client_id"], ENV["client_secret"])
-    @playlists = RSpotify::User.find('phil_bsg').playlists
-    render json: @playlists
+  def new
+    user = User.new
+  end
+
+  def create
+    user = User.new(user_params)
+
+    if user.save
+      session[:user_id] = user.id
+      redirect_to '/'
+    else
+      redirect_to '/api/signup'
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

@@ -1,19 +1,16 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import Application from './Application';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      message: 'Click the button to load data!'
-    }
+      message: "Click the button to load data!",
+    };
   }
 
-
-
-  
-  
   // Genre Component:
 
   // render() {
@@ -22,7 +19,6 @@ class App extends Component {
   //     "day-list__item--selected": props.selected,
   //     "day-list__item--full": props.spots === 0,
   //   });
-
 
   //   return (
   //     <div className="App">
@@ -38,19 +34,14 @@ class App extends Component {
   //   );
   // }
 
-
   render() {
 
-    
 
     return (
       <main className="layout">
         <Application />
       </main>
-      
-      
-      
-    )
+    );
   }
 }
 
