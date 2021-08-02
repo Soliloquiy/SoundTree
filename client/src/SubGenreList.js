@@ -11,20 +11,30 @@ import "./SubGenreList.scss"
 
 
 export default function SubGenreList(props) {
+
+  if (!props.genre) {
+    return []
+  } else {
   return (
     <ul>
       {props.genres.map((item) => {
         return (
           <div className="App">
             <br></br>
-            <li>{item.name}</li>
+            <li
+              key={item.name}
+              onClick={() => props.setSubGenre(item.name)}
+              >{item.name}</li>
             { item.sub_genres.map((sub) => <div>
-            <li>{sub}</li>
+            <li
+              key={sub}
+              onClick={() => props.setSubGenre(sub)}
+              >{sub}</li>
             <button>Follow</button>
             </div>)}
           </div>
         );
       })}
     </ul>
-  );
+  )};
 }

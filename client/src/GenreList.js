@@ -11,13 +11,18 @@ import "./GenreList.scss"
 
 
 export default function GenreList(props) {
+
+
   return (
     <ul>
       {props.genres.map((item) => {
         return (
           <div className="App">
              <li
-                class="genre-list__item"
+                key={item.name}
+                className="genre-list__item"
+                // selected={item.name === state.genre}
+                onClick={() => props.setGenre(item.name)}
               >
                 <h2 class="text--regular">{item.name}</h2>
               </li>
