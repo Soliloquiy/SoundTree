@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_01_003447) do
+ActiveRecord::Schema.define(version: 2021_08_02_050423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,18 @@ ActiveRecord::Schema.define(version: 2021_08_01_003447) do
   create_table "genres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
   end
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "subgenre_id", null: false
+    t.string "comment"
+    t.integer "like_count"
+    t.index ["subgenre_id"], name: "index_posts_on_subgenre_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -33,16 +40,32 @@ ActiveRecord::Schema.define(version: 2021_08_01_003447) do
   create_table "subgenres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.bigint "genre_id", null: false
+    t.index ["genre_id"], name: "index_subgenres_on_genre_id"
   end
 
   create_table "usergenres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "subgenre_id", null: false
+    t.index ["subgenre_id"], name: "index_usergenres_on_subgenre_id"
+    t.index ["user_id"], name: "index_usergenres_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "user_name"
+    t.string "password"
+    t.string "avatar"
   end
 
+  add_foreign_key "posts", "subgenres"
+  add_foreign_key "posts", "users"
+  add_foreign_key "subgenres", "genres"
+  add_foreign_key "usergenres", "subgenres"
+  add_foreign_key "usergenres", "users"
 end

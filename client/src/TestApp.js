@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
-import GenreList from './GenreList';
-import SubGenreList from './SubGenreList';
+import React, { Component } from "react";
+import "./App.css";
+import GenreList from "./GenreList";
+import SubGenreList from "./SubGenreList";
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      message: 'Click the button to load data!'
-    }
+      message: "Click the button to load data!",
+    };
   }
 
-
-
-  
-  
   // Genre Component:
 
   // render() {
@@ -23,7 +19,6 @@ class App extends Component {
   //     "day-list__item--selected": props.selected,
   //     "day-list__item--full": props.spots === 0,
   //   });
-
 
   //   return (
   //     <div className="App">
@@ -39,9 +34,7 @@ class App extends Component {
   //   );
   // }
 
-
   render() {
-
     const genres = [
       {
         name: "Metal",
@@ -51,8 +44,9 @@ class App extends Component {
           "Metal 2",
           "Metal 4",
           "Metal 5",
-          "Metal 6"
-      ]},
+          "Metal 6",
+        ],
+      },
       {
         name: "Rock",
         sub_genres: [
@@ -61,8 +55,9 @@ class App extends Component {
           "Rock 2",
           "Rock 4",
           "Rock 5",
-          "Rock 6"
-      ]},
+          "Rock 6",
+        ],
+      },
       {
         name: "Country",
         sub_genres: [
@@ -71,8 +66,9 @@ class App extends Component {
           "Country 2",
           "Country 4",
           "Country 5",
-          "Country 6"
-      ]},
+          "Country 6",
+        ],
+      },
       {
         name: "HipHop",
         sub_genres: [
@@ -81,19 +77,17 @@ class App extends Component {
           "HipHop 2",
           "HipHop 4",
           "HipHop 5",
-          "HipHop 6"
-      ]}
-    ]
+          "HipHop 6",
+        ],
+      },
+    ];
 
     return (
       <main className="layout">
         <GenreList genres={genres} /> <br></br>
         <SubGenreList genres={genres} />
       </main>
-      
-      
-      
-    )
+    );
   }
 }
 
