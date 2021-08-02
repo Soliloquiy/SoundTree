@@ -1,20 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 
 export default function Login() {
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setState({
+      ...state,
+      [event.target.name]: value
+    });
+  }
 
   return (
     <form className="login-form">
-      <div class="login-container">
+      <div className="login-container">
         <h1>Login</h1>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" id="email" required />
+        <label><b>Email</b></label>
+        <input 
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          value={state.email}
+          onChange={handleChange}
+        />
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" id="psw" required />
+        <label><b>Password</b></label>
+        <input 
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
 
-        <button type="submit" class="login-button">Login</button>
+        <button type="submit" value="submit">Login</button>
       </div>
     </form>
   )
