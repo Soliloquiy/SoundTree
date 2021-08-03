@@ -26,16 +26,14 @@ export default function useUserAuthentication() {
   function userLogin(email, password) {
 
     const loginParams = {
-      "user": {
-        email,
-        password
-      }    
+      email,
+      password   
     };
 
     console.log("loginParams", loginParams)
 
     return axios
-      .post(`/api/users.json`, loginParams)
+      .post(`/api/login.json`, loginParams)
       .then(() => {
         console.log("user login sent to rails")
       })
