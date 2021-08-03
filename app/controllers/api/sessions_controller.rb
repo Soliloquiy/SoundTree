@@ -4,12 +4,13 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    if user = User.authenticate_with_credentials(params[:email], params[:password])
-      session[:user_id] = user.id
-      redirect_to '/'
-    else
-      redirect_to '/api/login'
-    end
+    puts params[:email],params[:password]
+    # if user = User.authenticate_with_credentials(params[:email], params[:password])
+    #   session[:user_id] = user.id
+    #   redirect_to '/'
+    # else
+    #   redirect_to '/api/login'
+    # end
   end
 
   def destroy
