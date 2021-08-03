@@ -12,7 +12,7 @@ class User < ApplicationRecord
     user = User.find_by(:email => email.strip.downcase)
 
     if user #&& user.authenticate(password)
-      user
+      puts user.inspect
     else
       nil
     end
