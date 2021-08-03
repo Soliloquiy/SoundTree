@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get '/logout' => 'sessions#destroy'
 
     get "/forum" => "posts#index"
+    post "/forum" => "posts#create"
 
   end
 
