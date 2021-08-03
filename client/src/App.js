@@ -5,14 +5,18 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import './App.css';
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Application from './Application';
+import Navigation from "./components/Navigation";
 import Login from "./Login";
 import Register from './Register';
 import Form from "./components/forum/Form";
 
 export default function App() {
   return (
+    <>
+    <Navigation />
     <Router>
       <div>
         {/* <nav>
@@ -54,5 +58,6 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    </>
   );
 }
