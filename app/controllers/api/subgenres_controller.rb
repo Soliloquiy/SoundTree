@@ -1,6 +1,7 @@
 class Api::SubgenresController < ApplicationController
   def index
-    @genres = RSpotify::Category.list(limit: 50)
-    render json: @genres
+    @subgenres = Subgenre.all
+    render json: @subgenres
+    
   end
 end
