@@ -29,32 +29,78 @@ require 'rspotify'
     "Folk Metal"
   ],
 
-  roots: ["folk"],
+  roots: ["folk", 
+  "Celtic", 
+  "Accoustic", 
+  "Bluegrass",
+  "Maritime"],
 
-  country: ["Country"],
+  country: ["Country", 
+  "Classic Country", 
+  "Country Blues", 
+  "Country Rock"],
 
-  hiphop: ["Hip Hop"],
+  hiphop: ["Hip Hop",
+  "Rap",
+  "Boom Bap",
+  "Trap",
+  "Gangsta Rap",
+  "Alternative Rap",
+  "Melodic Rap"
+],
 
-  classical: ["Classical"],
+  classical: ["Classical", 
+  "Soundtrack", 
+  "Symphonic",
+  "Film Scores"],
 
-  pop: ["Pop", "Power Pop"],
+  pop: ["Pop", 
+  "Power Pop", 
+  "Top 40", 
+  "Top Hits"],
 
-  punk: ["Punk"],
+  punk: ["Punk", 
+  "Post Punk",
+  "Hardcore Punk",
+  "Garage Punk"],
 
-  blues: ["Blues"],
+  blues: ["Blues", 
+  "Rythm & Blues",
+  "Country Blues",
+  "Blues Rock",
+  "Gospel Blues"],
 
-  jazz: ["Jazz", "Jazz Fusion"],
+  jazz: ["Jazz", 
+  "Jazz Fusion",
+  "Acid Jazz",
+  "Free Jazz"],
 
-  caribbean: ["Reggae"],
+  caribbean: ["Reggae",
+  "Reggae Fusion",
+  "Reggae Rock"],
 
-  funk: ["Funk"],
+  funk: ["Funk",
+  "Funk Rock",
+  "Jazz Funk"],
 
-  instrumental: ["Instrumental"]
+  instrumental: ["Instrumental",
+  "Instrumental Rock",
+  "Instrumental Jazz",
+  "Instrumental Metal"]
 }
 
-@spotify_genres.each do |key, value| 
-  sgenre = RSpotify::Category.find(key.to_s)
-  Genre.create!({
-    name: sgenre.name
+@spotify_genres.each do |genre, subgenre| 
+
+  sgenre = RSpotify::Category.find(genre.to_s)
+  newGenre = Genre.create!({
+    name: sgenre.id
   })
+
+  subgenre.each do |genre_child|
+    Subgenre.create!({
+      name: genre_child,
+      genre_id: newGenre.id
+    })
+  end
+
 end
