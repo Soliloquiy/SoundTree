@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'genres#index'
 
-  namespace :api do 
+  namespace :api, defaults: {format: "json"} do 
     
     resources :genres do
       get :genres
@@ -20,10 +20,11 @@ Rails.application.routes.draw do
       get :recommendations
     end
 
+    post '/users' => 'users#create'
   end
 
   get 'api/signup' => 'users#new'
-  post 'api/users' => 'users#create'
+
   
   get 'api/login' => 'sessions#new'
   post 'api/login' => 'sessions#create'
