@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import useUserAuthentication from "./hooks/useUserAuthentication";
 import "./Register.scss";
+import { register } from "./serviceWorker";
 
 export default function Register() {
   const [state, setState] = useState({
@@ -16,6 +18,13 @@ export default function Register() {
       [event.target.name]: value
     });
   }
+
+  const { registerUser } = useUserAuthentication();
+
+  function save(event) {
+    event.preventDefault();
+    registerUser(state.username, state.email, state.password, state.avatar)
+  };
 
 
   return (
@@ -43,7 +52,7 @@ export default function Register() {
 
         <label><b>Password</b></label>
         <input 
-          type="password" 
+          type="text" 
           placeholder="Enter Password" 
           name="password"
           value={state.password}
@@ -52,14 +61,14 @@ export default function Register() {
 
         <label><b>Avatar</b></label>
         <input 
-          type="url" 
+          type="text" 
           placeholder="Enter avatar url" 
           name="avatar"
           value={state.avatar}
           onChange={handleChange}
         />
 
-        <button type="submit" value="submit">Register</button>
+        <button type="submit" onClick={(event) => save(event)}>Register</button>
       </div>
     </form>
   )
