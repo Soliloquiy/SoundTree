@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Application from './Application';
+import Register from './Register'
+import Form from "./components/forum/Form";
 
 export default function App() {
   return (
@@ -38,7 +40,7 @@ export default function App() {
           </Route>
 
           <Route path="/registration">
-          <Application />
+          <Register />
           </Route>
 
           <Route path="/profile">
@@ -46,7 +48,7 @@ export default function App() {
           </Route>
 
           <Route path="/forum">
-
+            <Form />
           </Route>
         </Switch>
       </div>
