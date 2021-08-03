@@ -1,37 +1,55 @@
-import React, { Component } from "react";
-import axios from "axios";
-import "./App.css";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import './App.css';
+import Application from './Application';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: "Click the button to load data!",
-    };
-  }
+export default function App() {
+  return (
+    <Router>
+      <div>
+        {/* <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav> */}
 
-  fetchData = () => {
-    axios
-      .get("/api/genres") // You can simply make your requests to "/api/whatever you want"
-      .then((response) => {
-        // handle success
-        console.log(response.data); // The entire response from the Rails API
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route exact path="/">
+            <Application />
+          </Route>
 
-        console.log(response.data.message); // Just the message
-        this.setState({
-          message: response.data.message,
-        });
-      });
-  };
+          <Route path="/login">
 
-  render() {
-    return (
-      <div className="App">
-        <h1>{this.state.message}</h1>
-        <button onClick={this.fetchData}>Fetch Data</button>
+          </Route>
+
+          <Route path="/registration">
+          <Application />
+          </Route>
+
+          <Route path="/profile">
+
+          </Route>
+
+          <Route path="/forum">
+
+          </Route>
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
-
-export default App;

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'genres#index'
 
-  namespace :api do 
+  namespace :api, defaults: {format: "json"} do 
     
     resources :genres do
       get :genres
@@ -20,16 +20,21 @@ Rails.application.routes.draw do
       get :recommendations
     end
 
+    get '/signup' => 'users#new'
+    post '/users' => 'users#create'
+
+    post '/login' => 'sessions#create'
+    get '/login' => 'sessions#new'
+    get '/logout' => 'sessions#destroy'
+
+    get "/forum" => "posts#index"
+
   end
 
-  get 'api/signup' => 'users#new'
-  post 'api/users' => 'users#create'
-  
-  get 'api/login' => 'sessions#new'
-  post 'api/login' => 'sessions#create'
-  get 'api/logout' => 'sessions#destroy'
 
-  get "api/forum" => "posts#index"
+  
+
+
 
   # get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do
   #   !request.xhr? && request.format.html?
