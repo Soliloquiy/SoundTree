@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useUserAuthentication from "./hooks/useUserAuthentication";
 import "./Login.scss";
 
 export default function Login() {
@@ -14,6 +15,14 @@ export default function Login() {
       [event.target.name]: value
     });
   }
+
+
+  const { userLogin } = useUserAuthentication();
+
+  function save(event) {
+    event.preventDefault();
+    userLogin(state.email, state.password)
+  };
 
   return (
     <form className="login-form">
@@ -38,7 +47,7 @@ export default function Login() {
           onChange={handleChange}
         />
 
-        <button type="submit" value="submit">Login</button>
+        <button type="submit" onClick={(event) => {save(event)}}>Login</button>
       </div>
     </form>
   )

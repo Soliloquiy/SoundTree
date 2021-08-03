@@ -21,13 +21,15 @@ Rails.application.routes.draw do
     end
 
     post '/users' => 'users#create'
+
+    post '/login' => 'sessions#create'
+
   end
 
   get 'api/signup' => 'users#new'
 
   
   get 'api/login' => 'sessions#new'
-  post 'api/login' => 'sessions#create'
   get 'api/logout' => 'sessions#destroy'
 
   get "api/forum" => "posts#index"
