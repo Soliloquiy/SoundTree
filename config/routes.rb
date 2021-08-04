@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     resources :subgenres do
       get :subgenres
     end
+    
+    resources :songs do
+      get :songs
+    end
+
     resources :posts do
       get :posts
     end
