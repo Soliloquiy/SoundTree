@@ -67,6 +67,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    bcrypt (3.1.16)
     bootsnap (1.7.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -222,6 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   figaro

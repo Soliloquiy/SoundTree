@@ -1,5 +1,6 @@
 import React from "react";
-import "./LikeCount.scss"
+import "./LikeCount.scss";
+
 
 export default function LikeCount(props) {
 
@@ -8,5 +9,5 @@ export default function LikeCount(props) {
     <button className="like-button"> Like </button>
     <span>{props.likes}</span>
     </div>
-  )
-};
+  );
+}
