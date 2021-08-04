@@ -93,6 +93,10 @@ export default function Board(props) {
   // )
 
   return (
-    <ForumGenreLinks genres={genres}/>
+    <div>
+      <Form />
+      <ForumGenreLinks genres={genres}/>
+    </div>
+    
   )
 };

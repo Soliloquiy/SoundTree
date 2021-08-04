@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
     resources :posts do
       get :posts
+      put '/posts' => 'posts#update'
     end
 
     resources :recommendations do
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
 
     get '/signup' => 'users#new'
     post '/users' => 'users#create'
+
+    
 
     post '/login' => 'sessions#create'
     get '/login' => 'sessions#new'
