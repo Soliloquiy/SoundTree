@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'pp'
-require 'rspotify'
 
+require 'rspotify'
 
 @spotify_genres = {
 
-  rock: ["Classic Rock",
+  rock: ["Rock",
+    "Classic Rock",
     "Progressive Rock",
     "Hard Rock",
     "Alternative",
@@ -29,7 +29,8 @@ require 'rspotify'
     "Folk Metal"
   ],
 
-  roots: ["folk", 
+  roots: ["Roots",
+  "folk", 
   "Celtic", 
   "Accoustic", 
   "Bluegrass",
@@ -75,7 +76,8 @@ require 'rspotify'
   "Acid Jazz",
   "Free Jazz"],
 
-  caribbean: ["Reggae",
+  caribbean: ["Caribbean",
+  "Reggae",
   "Reggae Fusion",
   "Reggae Rock"],
 
@@ -92,15 +94,33 @@ require 'rspotify'
 @spotify_genres.each do |genre, subgenre| 
 
   sgenre = RSpotify::Category.find(genre.to_s)
-  newGenre = Genre.create!({
+  new_genre = Genre.create!({
     name: sgenre.id
   })
-
+ 
   subgenre.each do |genre_child|
-    Subgenre.create!({
+    new_subgenre = Subgenre.create!({
       name: genre_child,
-      genre_id: newGenre.id
+      genre_id: new_genre.id
     })
+
+    # t.string "name"
+    # t.string "album"
+    # t.string "artist"
+    # t.integer "subgenre_id"
+    # t.string "sub_genre_name"
+
+    subgenre_songs = RSpotify::Track.search(genre_child.to_s)
+    subgenre_songs.each do |genre_song|
+      Song.create!({
+        subgenre_id: new_subgenre.id,
+        sub_genre_name: new_subgenre.name,
+        name: genre_song.name,
+        album: genre_song.album.name,
+        artist: genre_song.artists[0].name
+      })
+    end
+
   end
 
 end
