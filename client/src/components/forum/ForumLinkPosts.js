@@ -27,7 +27,7 @@ export default function ForumLinkPosts(props) {
             </div>
             <div className="post-content">
               <p>{item.comment}</p>
-              <LikeCount likes={item.like_count} />
+              <LikeCount post={item} />
             </div>
           </article>
         );

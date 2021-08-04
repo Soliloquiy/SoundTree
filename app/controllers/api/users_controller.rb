@@ -17,6 +17,7 @@ class Api::UsersController < ApplicationController
       redirect_to '/api/signup'
     end
   end
+  
 
   private
 
