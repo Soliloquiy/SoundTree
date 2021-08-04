@@ -12,6 +12,7 @@ import Navigation from "./components/Navigation";
 import Login from "./Login";
 import Register from './Register';
 import Form from "./components/forum/Form";
+import Board from "./components/forum/Board";
 
 export default function App() {
   return (
@@ -53,7 +54,7 @@ export default function App() {
           </Route>
 
           <Route path="/forum">
-            <Form />
+            <Board />
           </Route>
         </Switch>
       </div>
