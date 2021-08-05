@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import useUserAuthentication from "../hooks/useUserAuthentication";
+import { useHistory } from "react-router-dom";
 import "./Login.scss";
 
 export default function Login() {
+  let history = useHistory();
 
   const [state, setState] = useState({
     email: "",
@@ -17,17 +19,19 @@ export default function Login() {
     });
   }
    
-  
   const { userLogin } = useUserAuthentication(); 
 
   function save(event) {
     event.preventDefault();
     
-      userLogin(state.email, state.password)
-      .then((res) => {
-        console.log(`result back from userLogin: ${JSON.stringify(res)}`)
-        localStorage.setItem("user", res);
-      })
+    userLogin(state.email, state.password)
+    .then((res) => {
+      console.log(`result back from userLogin: ${JSON.stringify(res)}`)
+      localStorage.setItem("user", JSON.stringify(res));
+    })
+    .then(() =>{
+      history.push("/");
+    })
 
   };
 

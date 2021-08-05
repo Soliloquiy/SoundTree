@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  useHistory
 } from "react-router-dom";
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,22 +12,27 @@ import "./Navigation.scss";
 import Application from './components/Application';
 import Login from "./components/Login";
 import Register from './components/Register';
-import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
 export default function App() {
   let currentUser
   let button;
+  let history = useHistory();
 
   currentUser = JSON.parse(localStorage.getItem("user"));
   console.log(`current user: ${currentUser}`)
   console.log(`current user typeof: ${typeof currentUser}`)
 
+  function logout() {
+    localStorage.clear();
+    history.push("/");
+  }
+
   if (currentUser) {
     button = (
       <>
       <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
-      <Nav.Link href="/">Log out</Nav.Link>
+      <Nav.Link href="/" onClick={() => logout()}>Logout</Nav.Link>
       </>
     )
   } else {
