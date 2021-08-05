@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     
     resources :genres do
       get :genres
+      
     end
 
     resources :subgenres do
@@ -38,6 +39,8 @@ Rails.application.routes.draw do
 
     get "/forum" => "posts#index"
     post "/forum" => "posts#create"
+
+    post "/follow" => "usergenres#create"
 
   end
 

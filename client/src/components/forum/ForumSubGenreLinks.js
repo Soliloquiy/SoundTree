@@ -19,7 +19,7 @@ export default function ForumSubGenreLinks(props) {
           const id = parseInt(match.params.id)
           const foundSubGenre = props.genres.sub_genres.find(subGenre => subGenre.id === id)
           console.log(foundSubGenre)
-          return <ForumLinkPosts subGenres={foundSubGenre} />
+          return <ForumLinkPosts userId={props.userId} subGenres={foundSubGenre} />
           }} />
 
 

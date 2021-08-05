@@ -22,9 +22,14 @@ export default function SongsForSubGenre(props) {
         return (
           <div className="App">
             <br></br>
-            <li key={item.name}>{item.name}</li>
-            { item.songs.map((songs) => <div>
-            <li key={songs}>{songs}</li>
+            <li key={item.id}>{item.name}</li>
+            { item.songs.map((song) => 
+            <div>
+            <li key={song.id}>
+              Song Name: {song.name} 
+              Song Artist: {song.artist} 
+              Song Album: {song.album} 
+            </li>
             </div>)}
           </div>
         );

@@ -3,104 +3,35 @@ import '../App.css';
 import GenreList from './GenreList';
 import SubGenreList from './SubGenreList';
 import SongsForSubGenre from './SongsForSubGenre';
+import axios from 'axios'
 
 export default function Application(props) {
-
-  const genres = [
-    {
-      name: "Metal",
-      sub_genres: [
-        "Metal 1",
-        "Metal 2",
-        "Metal 2",
-        "Metal 4",
-        "Metal 5",
-        "Metal 6"
-    ]},
-    {
-      name: "Rock",
-      sub_genres: [
-        "Rock 1",
-        "Rock 2",
-        "Rock 2",
-        "Rock 4",
-        "Rock 5",
-        "Rock 6"
-    ]},
-    {
-      name: "Country",
-      sub_genres: [
-        "Country 1",
-        "Country 2",
-        "Country 2",
-        "Country 4",
-        "Country 5",
-        "Country 6"
-    ]},
-    {
-      name: "HipHop",
-      sub_genres: [
-        "HipHop 1",
-        "HipHop 2",
-        "HipHop 2",
-        "HipHop 4",
-        "HipHop 5",
-        "HipHop 6"
-    ]}
-  ]
-
-  const songsForGenre = [
-    {
-      name: "Metal",
-      songs: [
-        "Metal Song 1",
-        "Metal Song 2",
-        "Metal Song 2",
-        "Metal Song 4",
-        "Metal Song 5",
-        "Metal Song 6"
-    ]},
-    {
-      name: "Metal 1",
-      songs: [
-        "Metal 1 Song 1",
-        "Metal 1 Song 2",
-        "Metal 1 Song 2",
-        "Metal 1 Song 4",
-        "Metal 1 Song 5",
-        "Metal 1 Song 6"
-    ]},
-    {
-      name: "Country",
-      songs: [
-        "Song 1",
-        "Song 2",
-        "Song 2",
-        "Song 4",
-        "Song 5",
-        "Song 6"
-    ]},
-    {
-      name: "HipHop",
-      songs: [
-        "Song 1",
-        "Song 2",
-        "Song 2",
-        "Song 4",
-        "Song 5",
-        "Song 6"
-    ]}
-  ]
   
 
   const [state, setState] = useState({
     genre: "",
-    genres: genres,
+    genres: [],
     subGenres: [],
     subGenre: "",
-    songsForGenre: songsForGenre,
-    songs: []
+    songsForGenre: [],
+    songs: [],
+    userId: ""
   })
+
+  useEffect(() => {
+    Promise.all([
+      axios.get("/api/genres"),
+      axios.get("api/subgenres"),
+      // axios.get("/api/users"),
+    ]).then((all) => {
+      setState((prev) => ({
+        ...prev,
+        genres: all[0].data,
+        songsForGenre: all[1].data,
+        // users: all[2].data,
+      }));
+    });
+  }, []);
 
   const setGenre = (genre) => setState({ ...state, genre });
   
@@ -141,12 +72,14 @@ export default function Application(props) {
 
   const currentSubGenres = getSubGenresWithGenre(state, state.genre)
   const currentSongs = getSongsForSubGenre(state, state.subGenre)
+  console.log(state.genre)
+  console.log(state.subGenre)
   
   useEffect(() => {
     
     setState((prev) => ({
       ...prev,
-      subGenres: currentSubGenres.sub_genres
+      subGenres: currentSubGenres.subgenres
     }))
   }, [state.genre]);
 
@@ -166,8 +99,8 @@ export default function Application(props) {
 
   return (
     <main className="layout">
-      <GenreList setGenre={setGenre} genres={genres}  /> <br></br>
-      <SubGenreList setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} />
+      <GenreList setGenre={setGenre} genres={state.genres}  /> <br></br>
+      <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} />
       <SongsForSubGenre subGenre={state.subGenre} songs={[currentSongs]} />
     </main>
   )

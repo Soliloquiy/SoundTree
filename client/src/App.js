@@ -44,6 +44,7 @@ export default function App() {
     )
   }
 
+
   return (
     <Router>
       <div>
@@ -63,7 +64,8 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Application />
+            <Application 
+            currentUserId={currentUserId}/>
           </Route>
 
           <Route path="/login">
@@ -79,7 +81,8 @@ export default function App() {
           </Route>
 
           <Route path="/forum">
-            <Board />
+            <Board 
+            currentUserId={currentUserId}/>
           </Route>
         </Switch>
       </div>

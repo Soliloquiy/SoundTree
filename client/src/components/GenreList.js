@@ -19,7 +19,7 @@ export default function GenreList(props) {
         return (
           <div className="App">
              <li
-                key={item.name}
+                key={item.id}
                 className="genre-list__item"
                 // selected={item.name === state.genre}
                 onClick={() => props.setGenre(item.name)}

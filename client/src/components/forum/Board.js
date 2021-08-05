@@ -94,8 +94,7 @@ export default function Board(props) {
 
   return (
     <div>
-      <Form />
-      <ForumGenreLinks genres={genres}/>
+      <ForumGenreLinks userId={props.currentUserId} genres={genres}/>
     </div>
     
   )
