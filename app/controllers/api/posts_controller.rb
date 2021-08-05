@@ -21,6 +21,12 @@ class Api::PostsController < ApplicationController
     # end
   end
 
+  def update
+    @post = Post.find(params[:id])
+      puts "here"
+      @post.update!(like_count: params[:like_count])
+  end
+
   private
 
   def post_params
@@ -36,5 +42,19 @@ class Api::PostsController < ApplicationController
       :comment
     )
   end
+
+  def put_params
+
+    puts params.inspect
+    puts "-------------"
+    puts params[:post].inspect
+
+
+    params.require(:post).permit(
+      :id,
+      :like_count
+    )
+  end
+
 
 end

@@ -12,8 +12,14 @@ Rails.application.routes.draw do
     resources :subgenres do
       get :subgenres
     end
+    
+    resources :songs do
+      get :songs
+    end
+
     resources :posts do
       get :posts
+      put '/posts' => 'posts#update'
     end
 
     resources :recommendations do
@@ -25,6 +31,7 @@ Rails.application.routes.draw do
     post '/users' => 'users#create'
 
     get '/session' => 'sessions#index'
+
     post '/login' => 'sessions#create'
     get '/login' => 'sessions#new'
     get '/logout' => 'sessions#destroy'
