@@ -9,8 +9,13 @@ class Api::GenresController < ApplicationController
     @genres = Genre.all
     
     render json: @genres, include: [:subgenres]
-    # render json: @genres, include: {subgenres: {include: {songs: {}}}}
     
+    
+  end
+
+  def show
+    @genres = Genre.all
+    render json: @genres, include: {subgenres: {include: {posts: {}}}}
 
   end
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     
     resources :genres do
       get :genres
+      
     end
 
     resources :subgenres do
