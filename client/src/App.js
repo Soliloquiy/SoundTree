@@ -16,7 +16,28 @@ import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
 export default function App() {
-  const [currentUserId, setCurrentUserId] = useState(null)
+  let currentUser
+  let button;
+
+  currentUser = JSON.parse(localStorage.getItem("user"));
+  console.log(`current user: ${currentUser}`)
+  console.log(`current user typeof: ${typeof currentUser}`)
+
+  if (currentUser) {
+    button = (
+      <>
+      <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
+      <Nav.Link href="/">Log out</Nav.Link>
+      </>
+    )
+  } else {
+    button = (
+      <>
+      <Nav.Link href="/register">Register</Nav.Link>
+      <Nav.Link href="/login">Login</Nav.Link>
+      </>
+    )
+  }
 
   return (
     <Router>
@@ -28,8 +49,7 @@ export default function App() {
                 <Nav.Link href="/forum">Forum</Nav.Link>            
               </Nav>
               <Nav>
-                <Nav.Link href="/register">Register</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                {button}
               </Nav>
           </Container>
         </Navbar>
@@ -42,10 +62,7 @@ export default function App() {
           </Route>
 
           <Route path="/login">
-            <Login 
-              currentUserId={currentUserId}
-              setCurrentUserId={setCurrentUserId}
-            />
+            <Login />
           </Route>
 
           <Route path="/register">

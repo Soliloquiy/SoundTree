@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import useUserAuthentication from "../hooks/useUserAuthentication";
 import "./Login.scss";
 
-export default function Login(props) {
-  let id;
+export default function Login() {
+
   const [state, setState] = useState({
     email: "",
     password: ""
@@ -16,41 +16,17 @@ export default function Login(props) {
       [event.target.name]: value
     });
   }
-
-  useEffect(() => {
-
-    setState((prev) => ({
-      ...prev,
-      currentUserId: id
-    }))
-  }, [props.currentUserId])
    
-  function userLogin(email, password) {
-
-    const loginParams = {
-      email,
-      password
-    };
-
-    console.log("loginParams", loginParams)
-
-    return axios
-      .post(`/api/login.json`, loginParams)
-      .then((res) => {
-        console.log(`login result: ${res.data}`)
-        return res.data
-      })
-  };
-
+  
+  const { userLogin } = useUserAuthentication(); 
 
   function save(event) {
     event.preventDefault();
     
       userLogin(state.email, state.password)
       .then((res) => {
-        console.log(`result back from userLogin: ${res}`)
-        id = res;
-        props.setCurrentUserId(id);
+        console.log(`result back from userLogin: ${JSON.stringify(res)}`)
+        localStorage.setItem("user", res);
       })
 
   };
