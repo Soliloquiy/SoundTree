@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,32 +7,32 @@ import {
 } from "react-router-dom";
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import "./Navigation.scss";
 import Application from './Application';
-import Navigation from "./components/Navigation";
 import Login from "./Login";
 import Register from './Register';
 import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
 export default function App() {
+  const [currentUserId, setCurrentUserId] = useState(null)
+
   return (
-    <>
-    <Navigation />
     <Router>
       <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav> */}
+        <Navbar variant="dark" className="navigation-bar">
+          <Container>
+            <Navbar.Brand href="/">SoundTree</Navbar.Brand>
+              <Nav className="me-auto">
+                <Nav.Link href="/forum">Forum</Nav.Link>            
+              </Nav>
+              <Nav>
+                <Nav.Link href="/register">Register</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
+              </Nav>
+          </Container>
+        </Navbar>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -42,7 +42,10 @@ export default function App() {
           </Route>
 
           <Route path="/login">
-            <Login />
+            <Login 
+              currentUserId={currentUserId}
+              setCurrentUserId={setCurrentUserId}
+            />
           </Route>
 
           <Route path="/register">
@@ -59,6 +62,5 @@ export default function App() {
         </Switch>
       </div>
     </Router>
-    </>
   );
 }
