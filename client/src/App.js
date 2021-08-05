@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  useHistory
 } from "react-router-dom";
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,11 +12,38 @@ import "./Navigation.scss";
 import Application from './components/Application';
 import Login from "./components/Login";
 import Register from './components/Register';
-import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
 export default function App() {
-  const [currentUserId, setCurrentUserId] = useState(1)
+  let currentUser
+  let button;
+  let history = useHistory();
+
+  currentUser = JSON.parse(localStorage.getItem("user"));
+  console.log(`current user: ${currentUser}`)
+  console.log(`current user typeof: ${typeof currentUser}`)
+
+  function logout() {
+    localStorage.clear();
+    history.push("/");
+  }
+
+  if (currentUser) {
+    button = (
+      <>
+      <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
+      <Nav.Link href="/" onClick={() => logout()}>Logout</Nav.Link>
+      </>
+    )
+  } else {
+    button = (
+      <>
+      <Nav.Link href="/register">Register</Nav.Link>
+      <Nav.Link href="/login">Login</Nav.Link>
+      </>
+    )
+  }
+
 
   return (
     <Router>
@@ -28,8 +55,7 @@ export default function App() {
                 <Nav.Link href="/forum">Forum</Nav.Link>            
               </Nav>
               <Nav>
-                <Nav.Link href="/register">Register</Nav.Link>
-                <Nav.Link href="/login">Login</Nav.Link>
+                {button}
               </Nav>
           </Container>
         </Navbar>
@@ -43,10 +69,7 @@ export default function App() {
           </Route>
 
           <Route path="/login">
-            <Login 
-              currentUserId={currentUserId}
-              setCurrentUserId={setCurrentUserId}
-            />
+            <Login />
           </Route>
 
           <Route path="/register">

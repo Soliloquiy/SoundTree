@@ -32,41 +32,53 @@ export default function Register() {
       <div className="register-container">
         <h1>Register</h1>
 
-        <label><b>Username</b></label>
-        <input 
-          type="text" 
-          placeholder="Enter Username" 
-          name="username"
-          value={state.username}
-          onChange={handleChange}
-        />
-
+        <div className="form-group">
+          <label><b>Username</b></label>
+          <input 
+            type="text" 
+            className="form-control"
+            placeholder="Enter Username" 
+            name="username"
+            value={state.username}
+            onChange={handleChange}
+          />
+        </div>
+        
+        <div className="form-group">
         <label><b>Email</b></label>
         <input 
-          type="text" 
+          type="text"
+          className="form-control"
           placeholder="Enter Email" 
           name="email" 
           value={state.email}
           onChange={handleChange}
         />
+        </div>
 
+        <div className="form-group">
         <label><b>Password</b></label>
         <input 
-          type="text" 
+          type="text"
+          className="form-control"
           placeholder="Enter Password" 
           name="password"
           value={state.password}
           onChange={handleChange}
         />
+        </div>
 
+        <div className="form-group">
         <label><b>Avatar</b></label>
         <input 
-          type="text" 
+          type="text"
+          className="form-control"
           placeholder="Enter avatar url" 
           name="avatar"
           value={state.avatar}
           onChange={handleChange}
         />
+        </div>
 
         <button type="submit" onClick={(event) => save(event)}>Register</button>
       </div>

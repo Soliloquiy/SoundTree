@@ -22,5 +22,22 @@ export default function useUserAuthentication() {
       })
   };
 
-  return { registerUser };
+  function userLogin(email, password) {
+
+    const loginParams = {
+      email,
+      password
+    };
+
+    console.log("loginParams", loginParams)
+
+    return axios
+      .post(`/api/login.json`, loginParams)
+      .then((res) => {
+        console.log(`login result: ${res.data}`)
+        return res.data
+      })
+  };
+
+  return { registerUser, userLogin };
 };
