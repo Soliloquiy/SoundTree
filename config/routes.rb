@@ -20,9 +20,11 @@ Rails.application.routes.draw do
       get :recommendations
     end
 
+    # get '/session' => 'users#index'
     get '/signup' => 'users#new'
     post '/users' => 'users#create'
 
+    get '/session' => 'sessions#index'
     post '/login' => 'sessions#create'
     get '/login' => 'sessions#new'
     get '/logout' => 'sessions#destroy'
