@@ -25,7 +25,8 @@ export default function SubGenreList(props) {
             <li
               key={subgenre.id}
               onClick={() => props.setSubGenre(subgenre.name)}
-              >{subgenre.name}
+            >
+            {subgenre.name}
             </li>
             {props.userId ? (
             <FollowButton userId={props.userId} subgenre_id={subgenre.id} />

@@ -17,6 +17,7 @@ import Board from "./components/forum/Board";
 export default function App() {
   let currentUser;
   let currentId;
+  let currentAvatar
   let button;
   let history = useHistory();
 
@@ -25,10 +26,12 @@ export default function App() {
   console.log(`current user typeof: ${typeof currentUser}`)
 
   if (currentUser) {
-    currentId = currentUser["id"];
+    currentId = currentUser["id"]
+    currentAvatar = currentUser["avatar"];
   } else {
     currentId = null;
   }
+
 
   function logout() {
     localStorage.clear();
@@ -89,7 +92,8 @@ export default function App() {
 
           <Route path="/forum">
             <Board 
-            currentUserId={currentId}/>
+            currentUserId={currentId}
+            currentUserAvatar={currentAvatar}/>
           </Route>
         </Switch>
       </div>

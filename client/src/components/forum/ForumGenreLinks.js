@@ -17,7 +17,7 @@ export default function ForumGenreLinks(props) {
           const id = parseInt(match.params.id)
           const foundGenre = props.genres.find(genre => genre.id === id)
           console.log(foundGenre)
-          return <ForumSubGenreLinks userId={props.userId} genres={foundGenre} />
+          return <ForumSubGenreLinks currentUserAvatar={props.currentUserAvatar} userId={props.userId} genres={foundGenre} />
         }} />
 
       <Route path="/forum">
