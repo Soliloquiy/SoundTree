@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import useUserAuthentication from "./hooks/useUserAuthentication";
+import useUserAuthentication from "../hooks/useUserAuthentication";
 import "./Register.scss";
-import { register } from "./serviceWorker";
+import { register } from "../serviceWorker";
 
 export default function Register() {
   const [state, setState] = useState({
