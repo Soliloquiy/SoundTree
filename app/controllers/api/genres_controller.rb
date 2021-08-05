@@ -8,8 +8,8 @@ class Api::GenresController < ApplicationController
     
     @genres = Genre.all
     
-    # render json: @genres, include: [:subgenres]
-    render json: @genres, include: {subgenres: {include: {songs: {}}}}
+    render json: @genres, include: [:subgenres]
+    # render json: @genres, include: {subgenres: {include: {songs: {}}}}
     
 
   end

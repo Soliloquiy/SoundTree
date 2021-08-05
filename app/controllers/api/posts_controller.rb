@@ -31,10 +31,6 @@ class Api::PostsController < ApplicationController
 
   def post_params
 
-    puts params.inspect
-    puts "-------------"
-    puts params[:post].inspect
-
 
     params.require(:post).permit(
       :user_id,
@@ -44,10 +40,6 @@ class Api::PostsController < ApplicationController
   end
 
   def put_params
-
-    puts params.inspect
-    puts "-------------"
-    puts params[:post].inspect
 
 
     params.require(:post).permit(

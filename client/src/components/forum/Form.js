@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Form.scss";
 import axios from "axios";
 
-export default function Form() {
+export default function Form(props) {
 
 
   function sendPost(user_id, subgenre_id, comment) {
@@ -43,7 +43,7 @@ export default function Form() {
 
   function save(event) {
     event.preventDefault();
-    sendPost(1, 1, state.comment)
+    sendPost(props.userId, props.subgenreId, state.comment)
   };
 
 
