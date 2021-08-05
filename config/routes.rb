@@ -39,6 +39,8 @@ Rails.application.routes.draw do
     get "/forum" => "posts#index"
     post "/forum" => "posts#create"
 
+    post "/follow" => "usergenres#create"
+
   end
 
 

@@ -16,7 +16,7 @@ import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
 export default function App() {
-  const [currentUserId, setCurrentUserId] = useState(null)
+  const [currentUserId, setCurrentUserId] = useState(1)
 
   return (
     <Router>
@@ -38,7 +38,8 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Application />
+            <Application 
+            currentUserId={currentUserId}/>
           </Route>
 
           <Route path="/login">
@@ -57,7 +58,8 @@ export default function App() {
           </Route>
 
           <Route path="/forum">
-            <Board />
+            <Board 
+            currentUserId={currentUserId}/>
           </Route>
         </Switch>
       </div>
