@@ -8,14 +8,14 @@ class User < ApplicationRecord
   
   # has_secure_password
 
-  def self.authenticate_with_credentials(email, password)
-    user = User.find_by(:email => email.strip.downcase)
-
-    if user #&& user.authenticate(password)
-      puts user.inspect
-    else
-      nil
-    end
-    
+  def self.authenticate_with_credentials(incomingemail, password)
+    user = User.find_by email: incomingemail
+    puts " im user authenticate: #{user.inspect}"
+    # if user #&& user.authenticate(password)
+     
+    # else
+    #   nil
+    # end
+    return user
   end
 end
