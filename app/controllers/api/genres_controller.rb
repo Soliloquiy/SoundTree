@@ -7,7 +7,10 @@ class Api::GenresController < ApplicationController
   def index
     
     @genres = Genre.all
-    render json: @genres
+    
+    # render json: @genres, include: [:subgenres]
+    render json: @genres, include: {subgenres: {include: {songs: {}}}}
+    
 
   end
 

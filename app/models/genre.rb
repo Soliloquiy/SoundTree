@@ -1,4 +1,4 @@
 class Genre < ApplicationRecord
-  has_many :subgenre
+  has_many :subgenres
 
 end

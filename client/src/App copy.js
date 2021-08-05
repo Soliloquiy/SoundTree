@@ -12,7 +12,7 @@ class App extends Component {
 
   fetchData = () => {
     axios
-      .get("/api/songs") // You can simply make your requests to "/api/whatever you want"
+      .get("/api/genres") // You can simply make your requests to "/api/whatever you want"
       .then((response) => {
         // handle success
         console.log(response.data); // The entire response from the Rails API
