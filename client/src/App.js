@@ -15,13 +15,20 @@ import Register from './components/Register';
 import Board from "./components/forum/Board";
 
 export default function App() {
-  let currentUser
+  let currentUser;
+  let currentId;
   let button;
   let history = useHistory();
 
   currentUser = JSON.parse(localStorage.getItem("user"));
   console.log(`current user: ${currentUser}`)
   console.log(`current user typeof: ${typeof currentUser}`)
+
+  if (currentUser) {
+    currentId = currentUser["id"];
+  } else {
+    currentId = null;
+  }
 
   function logout() {
     localStorage.clear();
@@ -65,7 +72,7 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Application 
-            currentUserId={currentUserId}/>
+            currentUserId={currentId}/>
           </Route>
 
           <Route path="/login">
@@ -82,7 +89,7 @@ export default function App() {
 
           <Route path="/forum">
             <Board 
-            currentUserId={currentUserId}/>
+            currentUserId={currentId}/>
           </Route>
         </Switch>
       </div>
