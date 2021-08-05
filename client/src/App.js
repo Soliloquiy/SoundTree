@@ -9,9 +9,9 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import "./Navigation.scss";
-import Application from './Application';
-import Login from "./Login";
-import Register from './Register';
+import Application from './components/Application';
+import Login from "./components/Login";
+import Register from './components/Register';
 import Form from "./components/forum/Form";
 import Board from "./components/forum/Board";
 
