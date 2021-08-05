@@ -1,4 +1,7 @@
 class Api::SessionsController < ApplicationController
+
+  def index
+  end
   
   def new 
   end
@@ -10,9 +13,14 @@ class Api::SessionsController < ApplicationController
 
     if user = User.authenticate_with_credentials(params[:email], params[:password])
       session[:user_id] = user.id
-      redirect_to '/'
+      puts " im session id: #{session[:user_id]}"
+      puts " session inspect: #{session.inspect}"
+      render json: user.id
     else
-      redirect_to '/api/login'
+      render json: {
+        error: "user doesn't exist",
+        status: 400
+      }, status: 400
     end
   end
 
