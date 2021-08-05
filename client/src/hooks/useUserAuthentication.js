@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function useUserAuthentication() {
-  
+
   function registerUser(username, email, password, avatar) {
 
     const registerParams = {
@@ -23,22 +22,5 @@ export default function useUserAuthentication() {
       })
   };
 
-  function userLogin(email, password) {
-
-    const loginParams = {
-      email,
-      password   
-    };
-
-    console.log("loginParams", loginParams)
-
-    return axios
-      .post(`/api/login.json`, loginParams)
-      .then(() => {
-        console.log("user login sent to rails")
-      })
-
-  };
-
-  return { registerUser, userLogin };
+  return { registerUser };
 };
