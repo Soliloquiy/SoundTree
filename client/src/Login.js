@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import useUserAuthentication from "./hooks/useUserAuthentication";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Login.scss";
 
-export default function Login() {
+export default function Login(props) {
+  let id;
   const [state, setState] = useState({
     email: "",
     password: ""
@@ -16,12 +17,42 @@ export default function Login() {
     });
   }
 
+  useEffect(() => {
 
-  const { userLogin } = useUserAuthentication();
+    setState((prev) => ({
+      ...prev,
+      currentUserId: id
+    }))
+  }, [props.currentUserId])
+   
+  function userLogin(email, password) {
+
+    const loginParams = {
+      email,
+      password
+    };
+
+    console.log("loginParams", loginParams)
+
+    return axios
+      .post(`/api/login.json`, loginParams)
+      .then((res) => {
+        console.log(`login result: ${res.data}`)
+        return res.data
+      })
+  };
+
 
   function save(event) {
     event.preventDefault();
-    userLogin(state.email, state.password)
+    
+      userLogin(state.email, state.password)
+      .then((res) => {
+        console.log(`result back from userLogin: ${res}`)
+        id = res;
+        props.setCurrentUserId(id);
+      })
+
   };
 
   return (
