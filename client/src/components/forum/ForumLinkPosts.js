@@ -15,8 +15,19 @@ export default function ForumLinkPosts(props) {
 
   console.log(props.subGenres.id)
 
-  if(!props.subGenres.sub_genre_posts) {
-    return <h1>This board is currently Empty. Write a post!</h1>
+  if(props.subGenres.posts.length === 0) {
+    return (
+      <div>
+        <h1>This board is currently Empty. Write a post!</h1>
+        {props.userId ? (
+        <Form userId={props.userId} subgenreId={props.subGenres.id}/>
+      ) : (
+        <div> </div>
+      )}
+    
+
+     </div>
+    )
   } else {
 
   return (
@@ -25,25 +36,31 @@ export default function ForumLinkPosts(props) {
     
     <ul>
       {props.userId ? (
-        <Form userId={props.userId} subgenreId={props.subGenres.id}/>
+        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.subGenres.id}/>
       ) : (
         <div> </div>
       )}
-      {props.subGenres.sub_genre_posts.map((item) => {
+      {props.subGenres.posts.map((item) => {
         return (
+          <div> 
             
+              <article>
+                <div className="post-user-profile">
+                  <img className="post-user-avatar" src={item.user.avatar} />
+                  <span>{item.user.username}</span>
+                </div>
+                <div className="post-content">
+                  <p>{item.comment}</p>
+                  {props.userId ? (
+                    <LikeCount post={item} />
+                  ) : (
+                    <div> </div>
+                  )}
+                  
+                </div>
+              </article>
 
-            <article>
-              <div className="post-user-profile">
-                <img className="post-user-avatar" src={item.avatar} />
-                <span>Spongebob223</span>
-              </div>
-              <div className="post-content">
-                <p>{item.comment}</p>
-                <LikeCount post={item} />
-              </div>
-            </article>
-
+            </div>
         );
       })}
     </ul>

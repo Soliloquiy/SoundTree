@@ -2,20 +2,6 @@ class Api::PostsController < ApplicationController
 
   def index
     @genres = Genre.all
-    # @genres.each do |genre|
-    #   puts genre.id
-    #   @subgenres=Subgenre.where(genre_id: genre.id)
-    #   puts @subgenres
-    #   @subgenres.each do |subgenre|
-    #     @posts = Post.find_by(subgenre_id: subgenre.id)
-    #     @posts.each do |post|
-    #       puts "userId: "
-    #       puts post.user_id
-    #     end
-    #   end
-    # end
-    # puts json: @genres, include: {subgenres: {include: {posts: {}}}}
-    puts Genre.includes(subgenres: {posts: {user: {} }}).all
 
 
     # @user_detail = 

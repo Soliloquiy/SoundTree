@@ -49,7 +49,7 @@ export default function Form(props) {
 
   return (
     <main className="post-form">
-      <img className="post-user-avatar" src="https://img.icons8.com/ios/452/spongebob-squarepants.png"/>
+      <img className="post-user-avatar" src={props.currentUserAvatar}/>
       <form>
         <textarea type="text" 
           placeholder="Enter comment" 
