@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :subgenre, through: :usergenre
-  has_many :post
+  has_many :posts, class_name: "Posts"
 
   validates :username, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false}

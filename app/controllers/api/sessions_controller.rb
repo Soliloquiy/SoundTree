@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
       session[:user_id] = user.id
       puts " im session id: #{session[:user_id]}"
       puts " session inspect: #{session.inspect}"
-      render json: user.id
+      render json: user
     else
       render json: {
         error: "user doesn't exist",

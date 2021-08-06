@@ -17,15 +17,15 @@ export default function ForumSubGenreLinks(props) {
 
       <Route path="/forum/:id/:id" render={({ match }) => {
           const id = parseInt(match.params.id)
-          const foundSubGenre = props.genres.sub_genres.find(subGenre => subGenre.id === id)
+          const foundSubGenre = props.genres.subgenres.find(subGenre => subGenre.id === id)
           console.log(foundSubGenre)
-          return <ForumLinkPosts subGenres={foundSubGenre} />
+          return <ForumLinkPosts currentUserAvatar={props.currentUserAvatar} userId={props.userId} subGenres={foundSubGenre} />
           }} />
 
 
       <Route path="/forum/:id">
         <ul>
-          {props.genres.sub_genres.map((item) => {
+          {props.genres.subgenres.map((item) => {
             return (
               <div className="App">
                 <li

@@ -1,5 +1,5 @@
 import React from "react";
-
+import FollowButton from "../FollowButton"
 import "./SubGenreList.scss"
 
 
@@ -21,16 +21,19 @@ export default function SubGenreList(props) {
         return (
           <div className="App">
             <br></br>
+            { item.subgenres.map((subgenre) => <div>
             <li
-              key={item.name}
-              onClick={() => props.setSubGenre(item.name)}
-              >{item.name}</li>
-            { item.sub_genres.map((sub) => <div>
-            <li
-              key={sub}
-              onClick={() => props.setSubGenre(sub)}
-              >{sub}</li>
-            <button>Follow</button>
+              key={subgenre.id}
+              onClick={() => props.setSubGenre(subgenre.name)}
+            >
+            {subgenre.name}
+            </li>
+            {props.userId ? (
+            <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+            ) : (
+              <div> </div>
+            )}
+            
             </div>)}
           </div>
         );

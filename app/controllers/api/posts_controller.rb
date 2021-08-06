@@ -1,7 +1,11 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @genres = Genre.all
+
+
+    # @user_detail = 
+    render json: @genres, include: {subgenres: {include: {posts: {include: {user: {}}}}}}
   end
 
   def new
@@ -31,10 +35,6 @@ class Api::PostsController < ApplicationController
 
   def post_params
 
-    puts params.inspect
-    puts "-------------"
-    puts params[:post].inspect
-
 
     params.require(:post).permit(
       :user_id,
@@ -44,10 +44,6 @@ class Api::PostsController < ApplicationController
   end
 
   def put_params
-
-    puts params.inspect
-    puts "-------------"
-    puts params[:post].inspect
 
 
     params.require(:post).permit(
