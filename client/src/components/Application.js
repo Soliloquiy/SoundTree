@@ -79,7 +79,8 @@ export default function Application(props) {
     
     setState((prev) => ({
       ...prev,
-      subGenres: currentSubGenres.subgenres
+      subGenres: currentSubGenres.subgenres,
+      subGenre: ""
     }))
   }, [state.genre]);
 

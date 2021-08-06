@@ -3,8 +3,10 @@ import Form from "./Form";
 import Post from "./Post";
 import ForumGenreLinks from "./ForumGenreLinks";
 import axios from 'axios'
-
 import "./Board.scss";
+import ForumGenreList from "./ForumGenreList";
+import ForumSubGenreList from "./ForumSubGenreList";
+import ForumPostsList from "./ForumPostsList";
 
 
 
@@ -12,7 +14,11 @@ import "./Board.scss";
 export default function Board(props) {
 
   const [state, setState] = useState({
-    forumGenres: []
+    forumGenre: "",
+    forumGenres: [],
+    forumSubGenre: "",
+    forumSubGenres: [],
+    forumPostsForGenre: [],
   })
   
   useEffect(() => {
@@ -28,6 +34,39 @@ export default function Board(props) {
     });
   }, []);
 
+  const setForumGenre = (forumGenre) => setState({ ...state, forumGenre }); 
+  const setForumSubGenre = (forumSubGenre) => setState({ ...state, forumSubGenre });
+
+  function getForumSubGenresWithGenre(state, genreName) {
+    const foundGenre = state.forumGenres.filter((genre) => genre.name === genreName)[0];
+  
+    if (!genreName || !foundGenre) {
+      return [];
+    }
+  
+    const subGenres = foundGenre;
+    
+    
+    return subGenres
+  }
+
+  function getForumPostsForSubGenre(state, genreName) {
+    const foundGenre = state.forumSubGenres.filter((genre) => genre.name === genreName)[0];
+  
+    if (!genreName || !foundGenre) {
+      return [];
+    }
+  
+    const posts = foundGenre;
+    
+    
+    return posts
+  }
+
+  const currentForumSubGenres = getForumSubGenresWithGenre(state, state.forumGenre)
+  
+
+
   // return (
   //   <main className="post-board">
   //     <section>
@@ -40,9 +79,33 @@ export default function Board(props) {
   //   </main>
   // )
 
+  useEffect(() => {
+    
+    setState((prev) => ({
+      ...prev,
+      forumSubGenres: currentForumSubGenres.subgenres,
+      forumSubGenre: ""
+    }))
+  }, [state.forumGenre]);
+
+  useEffect(() => {
+    const currentForumPosts = getForumPostsForSubGenre(state, state.forumSubGenre)
+
+    
+    setState((prev) => ({
+      ...prev,
+      forumPostsForGenre: currentForumPosts
+    }))
+  }, [state.forumSubGenre]);
+
+  console.log(state.forumSubGenres)
+  console.log(props.currentUserId)
+
   return (
     <div>
-      <ForumGenreLinks currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} genres={state.forumGenres}/>
+      <ForumGenreList setGenre={setForumGenre} genres={state.forumGenres} />
+      <ForumSubGenreList userId={props.currentUserId} setSubGenre={setForumSubGenre} genre={state.forumGenre} genres={[currentForumSubGenres]} />
+      <ForumPostsList currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} subGenre={state.ForumSubGenre} posts={[state.forumPostsForGenre]} />
     </div>
     
   )
