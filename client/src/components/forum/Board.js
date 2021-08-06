@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Form from "./Form";
 import Post from "./Post";
-import ForumGenreLinks from "./ForumGenreLinks";
 import axios from 'axios'
 import "./Board.scss";
 import ForumGenreList from "./ForumGenreList";
