@@ -1,6 +1,10 @@
 class Api::SessionsController < ApplicationController
 
   def index
+
+    @usergenres = Usergenre.all
+    render json: @usergenres, include: {subgenre: {include: {songs: {} }}}
+    
   end
   
   def new 
