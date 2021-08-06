@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useUserAuthentication from "../hooks/useUserAuthentication";
-import "./Register.scss";
-import { register } from "../serviceWorker";
+import "./Form.scss";
 
 export default function Register() {
   const [state, setState] = useState({
@@ -28,60 +27,59 @@ export default function Register() {
 
 
   return (
-    <form className="register-form">
-      <div className="register-container">
+    <div className="form-container">
+      <form className="form-box">
         <h1>Register</h1>
 
-        <div className="form-group">
-          <label><b>Username</b></label>
+        <div className="user-box">
           <input 
             type="text" 
             className="form-control"
-            placeholder="Enter Username" 
+            placeholder="Username" 
             name="username"
             value={state.username}
             onChange={handleChange}
           />
         </div>
         
-        <div className="form-group">
-        <label><b>Email</b></label>
+        <div className="user-box">
         <input 
           type="text"
           className="form-control"
-          placeholder="Enter Email" 
+          placeholder="Email" 
           name="email" 
           value={state.email}
           onChange={handleChange}
         />
         </div>
 
-        <div className="form-group">
-        <label><b>Password</b></label>
+        <div className="user-box">
         <input 
           type="text"
           className="form-control"
-          placeholder="Enter Password" 
+          placeholder="Password" 
           name="password"
           value={state.password}
           onChange={handleChange}
         />
         </div>
 
-        <div className="form-group">
-        <label><b>Avatar</b></label>
+        <div className="user-box">
         <input 
           type="text"
           className="form-control"
-          placeholder="Enter avatar url" 
+          placeholder="Avatar Url" 
           name="avatar"
           value={state.avatar}
           onChange={handleChange}
         />
         </div>
 
-        <button type="submit" onClick={(event) => save(event)}>Register</button>
-      </div>
-    </form>
+        <button className="button" type="submit" onClick={(event) => save(event)}>
+          <span>Register</span>
+        </button>
+      </form>
+    </div>
+    
   )
 };
