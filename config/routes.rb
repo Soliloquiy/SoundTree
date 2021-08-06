@@ -20,19 +20,20 @@ Rails.application.routes.draw do
 
     resources :posts do
       get :posts
-      put '/posts' => 'posts#update'
+    end
+
+    resources :usergenres do
+      get :usergenres
     end
 
     resources :recommendations do
       get :recommendations
     end
 
-    # get '/session' => 'users#index'
     get '/signup' => 'users#new'
     post '/users' => 'users#create'
 
-    get '/session' => 'sessions#index'
-
+    get '/profile' => 'sessions#index'
     post '/login' => 'sessions#create'
     get '/login' => 'sessions#new'
     get '/logout' => 'sessions#destroy'
@@ -40,14 +41,13 @@ Rails.application.routes.draw do
     get "/forum" => "posts#index"
     post "/forum" => "posts#create"
 
+
     post "/follow" => "usergenres#create"
 
   end
 
 
-  
-
-
+  end
 
   # get '*path', to: "static_pages#fallback_index_html", constraints: ->(request) do
   #   !request.xhr? && request.format.html?

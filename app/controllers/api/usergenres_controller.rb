@@ -1,5 +1,11 @@
 class Api::UsergenresController < ApplicationController
 
+  def index
+    @usergenres = Usergenre.all
+    render json: @usergenres
+  end
+
+
   def create
     
     @usergenres = Usergenre.new(usergenre_params)
@@ -17,5 +23,6 @@ class Api::UsergenresController < ApplicationController
       :subgenre_id,
     )
   end
+
 
 end
