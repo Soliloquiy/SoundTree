@@ -1,8 +1,7 @@
 import React from "react";
-import "./Post.scss";
-import "./LikeCount.scss"
-import LikeCount from "./LikeCount";
 import Form from "./Form";
+import LikeCount from "./LikeCount";
+
 
 // const genreClass = classNames("genre-list__item", {
     //   "genre-list__item--selected": props.selected,
@@ -11,16 +10,24 @@ import Form from "./Form";
 
 
 
-export default function ForumLinkPosts(props) {
+export default function ForumPostsList(props) {
 
-  console.log(props.subGenres.id)
+  console.log(props.posts)
+  console.log(props.posts[0].posts)
+  console.log(props.userId)
 
-  if(props.subGenres.posts.length === 0) {
+  if(props.posts[0].posts === undefined) {
+    return []
+
+  } else {
+
+
+  if(props.posts[0].posts.length === 0) {
     return (
       <div>
         <h1>This board is currently Empty. Write a post!</h1>
         {props.userId ? (
-        <Form userId={props.userId} subgenreId={props.subGenres.id}/>
+        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
       ) : (
         <div> </div>
       )}
@@ -29,18 +36,18 @@ export default function ForumLinkPosts(props) {
      </div>
     )
   } else {
-
+  
   return (
     
     
     
     <ul>
       {props.userId ? (
-        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.subGenres.id}/>
+        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
       ) : (
         <div> </div>
       )}
-      {props.subGenres.posts.map((item) => {
+      {props.posts[0].posts.map((item) => {
         return (
           <div> 
             
@@ -65,4 +72,5 @@ export default function ForumLinkPosts(props) {
       })}
     </ul>
   )};
+    }
 }
