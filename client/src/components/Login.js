@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useUserAuthentication from "../hooks/useUserAuthentication";
 import { useHistory } from "react-router-dom";
-import "./Login.scss";
+import "./Form.scss";
 
 export default function Login() {
   let history = useHistory();
@@ -36,30 +36,34 @@ export default function Login() {
   };
 
   return (
-    <form className="login-form">
-      <div className="login-container">
+    <div className="form-container">
+      <form className="form-box">
         <h1>Login</h1>
-
-        <label><b>Email</b></label>
-        <input 
-          type="text"
-          placeholder="Enter Email"
-          name="email"
-          value={state.email}
-          onChange={handleChange}
-        />
-
-        <label><b>Password</b></label>
-        <input 
-          type="password"
-          placeholder="Enter Password"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
-
-        <button type="submit" onClick={(event) => {save(event)}}>Login</button>
-      </div>
-    </form>
+        <div className="user-box">
+          <input 
+            type="text"
+            placeholder="Email"
+            name="email"
+            value={state.email}
+            onChange={handleChange}
+          />
+        </div>
+        
+        <div className="user-box">
+          <input 
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+        </div>
+          
+        <button className="button" type="submit" onClick={(event) => {save(event)}}>
+          <span>Login</span>
+        </button>
+      </form>
+    </div>
+    
   )
 };
