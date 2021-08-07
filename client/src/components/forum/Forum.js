@@ -1,16 +1,11 @@
 import React, {useEffect, useState} from "react";
-import Form from "./Form";
-import Post from "./Post";
 import axios from 'axios'
-import "./Board.scss";
+import "./Forum.scss";
 import ForumGenreList from "./ForumGenreList";
 import ForumSubGenreList from "./ForumSubGenreList";
 import ForumPostsList from "./ForumPostsList";
 
-
-
-
-export default function Board(props) {
+export default function Forum(props) {
 
   const [state, setState] = useState({
     forumGenre: "",
@@ -63,20 +58,6 @@ export default function Board(props) {
   }
 
   const currentForumSubGenres = getForumSubGenresWithGenre(state, state.forumGenre)
-  
-
-
-  // return (
-  //   <main className="post-board">
-  //     <section>
-  //       <Form />
-  //     </section>
-  //     <section>
-  //       <Post />
-  //       <Post />
-  //     </section>
-  //   </main>
-  // )
 
   useEffect(() => {
     
@@ -101,7 +82,7 @@ export default function Board(props) {
   console.log(props.currentUserId)
 
   return (
-    <div>
+    <div className="forum-index-page">
       <ForumGenreList setGenre={setForumGenre} genres={state.forumGenres} />
       <ForumSubGenreList userId={props.currentUserId} setSubGenre={setForumSubGenre} genre={state.forumGenre} genres={[currentForumSubGenres]} />
       <ForumPostsList currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} subGenre={state.ForumSubGenre} posts={[state.forumPostsForGenre]} />
