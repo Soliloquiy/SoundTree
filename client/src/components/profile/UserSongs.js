@@ -1,5 +1,5 @@
 import React from "react";
-import "./UserSongs.scss";
+//import "./UserSongs.scss";
 
 export default function UserSongs(props) {
   return (
@@ -8,7 +8,7 @@ export default function UserSongs(props) {
         {props.songs.map((song) => {
           return (
             <div className="App">
-              <li key={song} className="song-list__item">
+              <li key={song}>
                 <li class="text--regular">{song}</li>
               </li>
             </div>
