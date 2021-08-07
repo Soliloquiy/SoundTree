@@ -50,13 +50,20 @@ export default function Form(props) {
     <main className="post-form">
       <img className="post-user-avatar" src={props.currentUserAvatar}/>
       <form>
-        <textarea type="text" 
-          placeholder="Enter comment" 
+        <textarea
+          id="new-post-text"
+          className="cyberpunk"
+          type="text" 
+          placeholder="What do you think?" 
           name="comment"
           value={state.comment}
           onChange={handleChange}/>
-        <button type="submit" onClick={(event) => save(event)}>Post</button>
       </form>
+      <button className="post-button" type="submit" onClick={(event) => save(event)}>
+        <span class="btn__content">
+         Post
+        </span>
+      </button>
     </main>
    
   )
