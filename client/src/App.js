@@ -12,7 +12,7 @@ import "./Navigation.scss";
 import Application from './components/Application';
 import Login from "./components/Login";
 import Register from './components/Register';
-import Board from "./components/forum/Board";
+import Forum from "./components/forum/Forum";
 
 export default function App() {
   let currentUser;
@@ -58,7 +58,7 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Navbar variant="dark" className="navigation-bar">
+        <Navbar variant="dark" className="navigation-bar" sticky="top">
           <Container>
             <Navbar.Brand href="/">SoundTree</Navbar.Brand>
               <Nav className="me-auto">
@@ -91,7 +91,7 @@ export default function App() {
           </Route>
 
           <Route path="/forum">
-            <Board 
+            <Forum 
             currentUserId={currentId}
             currentUserAvatar={currentAvatar}/>
           </Route>
