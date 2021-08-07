@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.scss";
 import axios from "axios";
 
 export default function Form(props) {

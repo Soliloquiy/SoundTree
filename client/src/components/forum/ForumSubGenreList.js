@@ -17,17 +17,19 @@ export default function ForumSubGenreList(props) {
     <ul>
       {props.genres.map((item) => {
         return (
-          <div className="App">
+          <div className="forum-sub-genre">
             <br></br>
             { item.subgenres.map((subgenre) => <div>
             <li
               key={subgenre.id}
+              className="forum-sub-genre__name"
               onClick={() => props.setSubGenre(subgenre.name)}
             >
             {subgenre.name}
             </li>
             
             </div>)}
+            
           </div>
         );
       })}
