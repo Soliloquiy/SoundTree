@@ -43,6 +43,7 @@ Rails.application.routes.draw do
 
 
     post "/follow" => "usergenres#create"
+    post "/follow/:id" => "usergenres#delete"
 
   end
 
@@ -51,4 +52,3 @@ Rails.application.routes.draw do
   #   !request.xhr? && request.format.html?
   # end
 
-end
