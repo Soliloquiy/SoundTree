@@ -17,6 +17,7 @@
     box-shadow: 6px 0px 0px #d600ff;
     outline: transparent;
     position: relative;
+    cursor: default;
   }
   .like-button::after {
     --slice-0: inset(50% 50% 50% 50%);
