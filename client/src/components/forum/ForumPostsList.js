@@ -54,8 +54,8 @@ export default function ForumPostsList(props) {
               
             <article className="each-article" style={{border: `1px solid ${random_color}`}}>
               <div className="post-user-profile">
-                <img className="post-user-avatar" src={item.user.avatar} />
                 <span>{item.user.username}</span>
+                <img className="post-user-avatar" src={item.user.avatar} />
               </div>
               <div className="post-content">
                 <p>{item.comment}</p>
