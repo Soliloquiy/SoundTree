@@ -1,3 +1,10 @@
+:root {
+  --neon-green-color: #00FF9F;
+  --neon-purple-color: #BD00FF;
+  --neon-blue-color: #001EFF;
+  --neon-lightblue-color: #00B8FF;
+}
+
 .forum-index-page {
   display: flex;
   color: #fff;
@@ -128,6 +135,54 @@
       margin: 0 1em;
       padding: 0 1em;
     }
+  }
+  .each-article {
+    padding: 5px;
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--neon-green-color);
+    border: 30px solid var(--neon-green-color);
+    border-right: 5px solid var(--neon-green-color);
+    border-left: 5px solid var(--neon-purple-color);
+    border-bottom: 24px solid var(--neon-purple-color);
+    background-color: #000;
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+  }
+  .each-article.inverse {
+    border: none;
+    padding: 40px 15px 30px;
+    color: #000;
+    background-color: var(--neon-green-color);
+    border-right: 2px solid var(--neon-purple-color);
+  }
+  .dotted, .dotted:before, .dotted:after {
+    background: #000;
+    background-image: radial-gradient(#f9aded46 1px, transparent 0);
+    background-size: 5px 5px;
+    background-position: -13px -3px;
+  }
+  /*Small number style on the right side of the text box*/
+  .each-article:before {
+    content: "P-14";
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    right: 25px;
+    padding: 2px 2px 0px 2px;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    color: #000;
+    background-color: var(--neon-green-color);
+    border-left: 2px solid var(--neon-purple-color);
+  }
+  .each-article.inverse:before {
+    content: "T-71";
+    right: 90px;
+    bottom: 9px;
+  }
+  .each-article.inverse:before, .each-article:before {
+    background-color: #000;
+    color: yellow;
   }
 }
 

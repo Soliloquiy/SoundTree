@@ -6,7 +6,6 @@ import LikeCount from "./LikeCount";
 // const genreClass = classNames("genre-list__item", {
     //   "genre-list__item--selected": props.selected,
     // });
-const colors = ["#B60205", "#D93F0B", "#FBCA04", "#0E8A16", "#006B75", "#0052CC", "#5319E7", "#C5DEF5"]
 
 export default function ForumPostsList(props) {
 
@@ -48,11 +47,9 @@ export default function ForumPostsList(props) {
 
         {props.posts[0].posts.map((item) => {
 
-          let random_color = colors[Math.floor(Math.random() * colors.length)]
-
           return (
               
-            <article className="each-article" style={{border: `1px solid ${random_color}`}}>
+            <article className="each-article dotted">
               <div className="post-user-profile">
                 <span>{item.user.username}</span>
                 <img className="post-user-avatar" src={item.user.avatar} />
