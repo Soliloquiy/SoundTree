@@ -18,14 +18,14 @@ export default function GenreList(props) {
         <ul >
           {props.genres.map((item) => {
             return (
-              <div className="App">
+              <div>
                 <li
                   key={item.id}
-                  className="genre-list__item"
+                  className="cyberpunk glitched"
                   // selected={item.name === state.genre}
                   onClick={() => props.setGenre(item.name)}
                 >
-                  <span class="text--regular">{item.name}</span>
+                  {item.name}
                   </li>
               </div>
             );

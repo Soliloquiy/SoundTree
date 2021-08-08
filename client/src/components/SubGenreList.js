@@ -8,7 +8,11 @@ import "./SubGenreList.scss"
     // });
 
 
-
+let topRow;
+let middleRow;
+let middleRow2;
+let middleRow3;
+let bottomRow;
 
 export default function SubGenreList(props) {
 
@@ -16,28 +20,155 @@ export default function SubGenreList(props) {
     return []
   } else {
   return (
-    <ul>
-      {props.genres.map((item) => {
+    <section className="sub-genres">
+      {props.genres.map((genres) => {
+        {topRow = genres.subgenres.slice(0,1)}
+        {middleRow = genres.subgenres.slice(1,3)}
+        {middleRow2 = genres.subgenres.slice(3,5)}
+        {middleRow3 = genres.subgenres.slice(5,7)}
+        {bottomRow = genres.subgenres.slice(7)}
+        {console.log(bottomRow)}
         return (
-          <div className="App">
-            <br></br>
-            { item.subgenres.map((subgenre) => <div>
-            <li
-              key={subgenre.id}
-              onClick={() => props.setSubGenre(subgenre.name)}
-            >
-            {subgenre.name}
-            </li>
-            {props.userId ? (
-            <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-            ) : (
-              <div> </div>
-            )}
+          <div >
             
-            </div>)}
+
+            <section className="top-spacing">
+              
+            {topRow.map((subgenre) => {
+              return(
+                <section className="top">
+                  <section
+                    key={subgenre.id}
+                    onClick={() => props.setSubGenre(subgenre.name)}
+                  >
+                    <button class="cybr-btn">
+                    {subgenre.name}
+                      <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
+                      <span aria-hidden class="cybr-btn__tag">R25</span>
+                    </button>
+
+                    
+                    </section>
+                    <section className="follow-section">
+                      {props.userId ? (
+                      <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                      ) : (
+                        <div> </div>
+                      )}
+                      </section>
+
+                  </section>
+                  
+                  
+              )
+            })}
+            </section>
+            <section className="middle-spacing">
+            {middleRow.map((subgenre) => {
+              return(
+                <section className="middle">
+                <section
+                  key={subgenre.id}
+                  onClick={() => props.setSubGenre(subgenre.name)}
+                >
+                  <button class="cybr-btn">
+                    {subgenre.name}
+                      <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
+                      <span aria-hidden class="cybr-btn__tag">R25</span>
+                    </button>
+                
+              </section>
+              {props.userId ? (
+                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                ) : (
+                  <div> </div>
+                )}
+              </section>
+              )
+            })}
+            
+            </section>
+            <section className="middle-spacing-2">
+            {middleRow2.map((subgenre) => {
+              return(
+                <section className="middle">
+                <section
+                  key={subgenre.id}
+                  onClick={() => props.setSubGenre(subgenre.name)}
+                  className="middle"
+                >
+                  <button class="cybr-btn">
+                    {subgenre.name}
+                      <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
+                      <span aria-hidden class="cybr-btn__tag">R25</span>
+                    </button>
+                
+              </section>
+              {props.userId ? (
+                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                ) : (
+                  <div> </div>
+                )}
+              </section>
+              
+              )
+            })}
+            </section>
+            <section className="middle-spacing-3">
+            {middleRow3.map((subgenre) => {
+              return(
+                <section className="middle">
+                <section
+                  key={subgenre.id}
+                  onClick={() => props.setSubGenre(subgenre.name)}
+                  className="middle"
+                >
+                  <button class="cybr-btn">
+                    {subgenre.name}
+                      <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
+                      <span aria-hidden class="cybr-btn__tag">R25</span>
+                    </button>
+                
+              </section>
+              {props.userId ? (
+                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                ) : (
+                  <div> </div>
+                )}
+              </section>
+              
+              )
+            })}
+            </section>
+            <section className="bottom-spacing">
+            {bottomRow.map((subgenre) => {
+              return (
+                <section className="bottom">
+                <section
+                  key={subgenre.id}
+                  onClick={() => props.setSubGenre(subgenre.name)}
+                  className="bottom"
+                >
+                <button class="cybr-btn">
+                    {subgenre.name}
+                      <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
+                      <span aria-hidden class="cybr-btn__tag">R25</span>
+                    </button>
+                
+                </section>
+                {props.userId ? (
+                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                ) : (
+                  <div> </div>
+                )}
+                </section>
+                
+              )
+            })}
+            </section>
           </div>
         );
       })}
-    </ul>
+    </section>
   )};
 }
