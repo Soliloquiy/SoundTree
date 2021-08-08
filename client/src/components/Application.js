@@ -99,7 +99,7 @@ export default function Application(props) {
   
 
   return (
-    <main className="layout">
+    <main className="home-layout">
       <GenreList setGenre={setGenre} genres={state.genres}  /> <br></br>
       <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} />
       <SongsForSubGenre subGenre={state.subGenre} songs={[currentSongs]} />
