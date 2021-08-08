@@ -1,3 +1,10 @@
+:root {
+  --neon-green-color: #00FF9F;
+  --neon-purple-color: #BD00FF;
+  --neon-blue-color: #001EFF;
+  --neon-lightblue-color: #00B8FF;
+}
+
 .forum-index-page {
   display: flex;
   color: #fff;
@@ -17,6 +24,10 @@
     margin: 1em 1.5em;
     list-style-type: none;
   }
+
+  li:hover {
+    cursor: pointer;
+  }
 }
 
 .forum-post-board {
@@ -28,13 +39,6 @@
   top: 112px;
   padding: 2em;
 
-  .post-form {
-    display: flex;
-    padding: 1em;
-    align-items: center;
-    margin: 2em;
-  }
-
   .post-user-avatar {
     height: 80px;
   }
@@ -43,6 +47,73 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  .post-form {
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    margin: 1em;
+
+    form {
+      width: 80%;
+    }
+
+    input[type="text"].cyberpunk, textarea.cyberpunk {
+      width: calc(100% - 30px);
+      background-color: transparent;
+      color: #fff;
+      border: 30px solid #00ff9f;
+      border-left: 5px solid #d600ff;
+      border-right: 5px solid #00ff9f;
+      border-bottom: 15px solid 	#bd00ff;
+      clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
+      padding: 12px;
+      resize: none;
+      height: auto;
+      margin-left: 1em;
+    }
+
+    #new-post-text:focus {
+      outline: none;
+    }
+
+    button {
+      width: 10%;
+    }
+
+    .post-button {
+      width: 170px;
+      height: 45px; 
+      border: 0;
+      outline: none;
+      background-color: #00ff9f;
+      cursor: default;
+      position: relative;
+      font-family: Tomorrow, sans-serif;
+      font-size: .85rem;
+      text-transform: uppercase;
+      color: black;
+      clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    }
+    
+    .btn__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      background-color: yellow;
+      clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+    }
+    
+    .btn__content:hover {
+      background-color: #d600ff;
+    }
+
+  }
   
   .each-article {
     display: flex;
@@ -50,16 +121,68 @@
     border-radius: 10px;
     margin: 1em 0;
 
-
     .post-user-profile {
       display: flex;
+      flex-direction: column;
       align-items: center;
     }
     
     .post-content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0 1em;
+      padding: 0 1em;
     }
+  }
+  .each-article {
+    padding: 5px;
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--neon-green-color);
+    border: 30px solid var(--neon-green-color);
+    border-right: 5px solid var(--neon-green-color);
+    border-left: 5px solid var(--neon-purple-color);
+    border-bottom: 24px solid var(--neon-purple-color);
+    background-color: #000;
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+  }
+  .each-article.inverse {
+    border: none;
+    padding: 40px 15px 30px;
+    color: #000;
+    background-color: var(--neon-green-color);
+    border-right: 2px solid var(--neon-purple-color);
+  }
+  .dotted, .dotted:before, .dotted:after {
+    background: #000;
+    background-image: radial-gradient(#f9aded46 1px, transparent 0);
+    background-size: 5px 5px;
+    background-position: -13px -3px;
+  }
+  /*Small number style on the right side of the text box*/
+  .each-article:before {
+    content: "P-14";
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    right: 25px;
+    padding: 2px 2px 0px 2px;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    color: #000;
+    background-color: var(--neon-green-color);
+    border-left: 2px solid var(--neon-purple-color);
+  }
+  .each-article.inverse:before {
+    content: "T-71";
+    right: 90px;
+    bottom: 9px;
+  }
+  .each-article.inverse:before, .each-article:before {
+    background-color: #000;
+    color: yellow;
   }
 }
 

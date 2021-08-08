@@ -52,3 +52,4 @@ Rails.application.routes.draw do
   #   !request.xhr? && request.format.html?
   # end
 
+end
