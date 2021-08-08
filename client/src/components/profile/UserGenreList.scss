@@ -1,8 +1,63 @@
 .genre-list__item {
-  display: flex;
-  align-self: flex-start;
-  left: 1em;
-  top: 5em;
-  color: rgb(20, 20, 80);
-  width: 200px;
+  color: blue;
+}
+
+.sidebar {
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  background: #161b22;
+  font-size: 0.65em;
+}
+
+.side-nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  top: 46%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.side-nav ul {
+  list-style: none;
+
+  li {
+    position: relative;
+    margin: 3.2em 0;
+
+    span {
+      line-height: 4em;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.4em;
+      color: rgba(#fff, 0.35);
+      display: block;
+      transition: all ease-out 300ms;
+    }
+
+    &.active span {
+      color: white;
+    }
+
+    &:not(.active)::after {
+      opacity: 0.2;
+    }
+
+    &:not(.active):hover span {
+      color: rgba(#fff, 0.75);
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0.2em;
+      background: black;
+      left: 0;
+      bottom: 0;
+      background-image: linear-gradient(to right, #8060d2, #d05ca6);
+    }
+  }
 }
