@@ -14,6 +14,7 @@ let middleRow2;
 let middleRow3;
 let bottomRow;
 
+
 export default function SubGenreList(props) {
 
   if (!props.genre) {
@@ -31,10 +32,10 @@ export default function SubGenreList(props) {
         return (
           <div >
             
-
             <section className="top-spacing">
               
             {topRow.map((subgenre) => {
+              
               return(
                 <section className="top">
                   <section
@@ -46,25 +47,30 @@ export default function SubGenreList(props) {
                       <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
                       <span aria-hidden class="cybr-btn__tag">R25</span>
                     </button>
-
                     
-                    </section>
-                    <section className="follow-section">
-                      {props.userId ? (
-                      <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                      ) : (
-                        <div> </div>
-                      )}
-                      </section>
-
                   </section>
-                  
+
+                  <section className="follow-section">
+
+                    {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+                      <div className="follow-button-container">
+                        <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                      </div>
+    
+                    ) : (
+                      <div className="follow-button-container"> </div>
+                    )}
+                    
+                  </section>
+
+                </section>  
                   
               )
             })}
             </section>
             <section className="middle-spacing">
             {middleRow.map((subgenre) => {
+
               return(
                 <section className="middle">
                 <section
@@ -78,10 +84,15 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+   
+                {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+                
+                  <div className="follow-button-container">
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  </div>
+
                 ) : (
-                  <div> </div>
+                  <div className="follow-button-container"> </div>
                 )}
               </section>
               )
@@ -104,11 +115,16 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                ) : (
-                  <div> </div>
-                )}
+
+              {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
+                <div className="follow-button-container">
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                </div>
+
+              ) : (
+                <div className="follow-button-container"> </div>
+              )}
               </section>
               
               )
@@ -130,11 +146,15 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                ) : (
-                  <div> </div>
-                )}
+              {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
+                <div className="follow-button-container">
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                </div>
+
+              ) : (
+                <div className="follow-button-container"> </div>
+              )}
               </section>
               
               )
@@ -156,10 +176,14 @@ export default function SubGenreList(props) {
                     </button>
                 
                 </section>
-                {props.userId ? (
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
+                  <div className="follow-button-container">
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  </div>
+
                 ) : (
-                  <div> </div>
+                <div className="follow-button-container"> </div>
                 )}
                 </section>
                 

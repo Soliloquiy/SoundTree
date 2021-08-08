@@ -92,16 +92,39 @@ export default function Application(props) {
     }))
   }, [state.subGenre]);
 
-  console.log(state.songs)
+  //console.log(state.songs)
 
   
+  const [userSubgenreIds, setUserSubgenreIds] = useState([]);
+  
+  /****Retrieve all of the subgenres and songs associated with the current user******/
+  // remove dependency for better console log
+  useEffect(() => {
+    axios
+      .get("api/profile.json")
+      .then((response) => {
+        setUserSubgenreIds(getUserSubgenreIds(response.data))
+    })
+  }, []);
 
   
+  function getUserSubgenreIds(data) {
+    let userList = [];
+
+    data.forEach(item => {
+      if (item.user_id === props.currentUserId) {
+        userList.push(item.subgenre_id)
+      }
+    });
+    return userList;
+  }
+
+
 
   return (
     <main className="home-layout">
       <GenreList setGenre={setGenre} genres={state.genres}  /> <br></br>
-      <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} />
+      <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} userSubgenreIds={userSubgenreIds} />
       <SongsForSubGenre subGenre={state.subGenre} songs={[currentSongs]} />
     </main>
   )

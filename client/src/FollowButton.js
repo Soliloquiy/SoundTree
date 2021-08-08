@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
+import "./FollowButton.scss"
 
 
 
@@ -13,34 +14,25 @@ export default function FollowButton(props) {
 
   function sendFollow(user_id, subgenre_id) {
 
-        // const data = 
-        //   {
-        //     userId,
-        //     subGenreId
-        //   }
-
-          const data = 
-      {"usergenre": {
-          user_id,
-          subgenre_id
-        }
-        
-      };
-            
-        
-        console.log("data: ", data)
+    const data = {
+      "usergenre": {
+        user_id,
+        subgenre_id
+      }  
+    };
+              
+    console.log("data: ", data)
     
-        return axios
-          .post(`/api/follow.json`, data)
-          .then(() => {
-            
-            console.log("post create sent to rails")
-          })
-      }
+    return axios
+      .post(`/api/follow.json`, data)
+      .then(() => {  
+        console.log("post create sent to rails")
+      })
+  }
 
   return (
     <div className="follow">
-    <button className="follow-button" onClick={() => {sendFollow(props.userId, props.subgenre_id)}} > Follow </button>
+      <button className="follow-button" onClick={() => {sendFollow(props.userId, props.subgenre_id)}} > Follow </button>
     </div>
   );
 }
