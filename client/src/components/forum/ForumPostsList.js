@@ -9,9 +9,9 @@ import LikeCount from "./LikeCount";
 
 export default function ForumPostsList(props) {
 
-  console.log(props.posts)
-  console.log(props.posts[0].posts)
-  console.log(props.userId)
+
+
+
 
   if(props.posts[0].posts === undefined) {
     return []
@@ -24,7 +24,7 @@ export default function ForumPostsList(props) {
       <div className="forum-post-board">
         <h1>This board is currently Empty. Write a post!</h1>
         {props.userId ? (
-        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
+        <Form setPost={props.setPost} setForumSubGenre={props.setForumSubGenre} setForumGenre={props.setForumGenre} genre={props.genre} subGenre={props.subGenre} currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
       ) : (
         <div> </div>
       )}
@@ -38,7 +38,7 @@ export default function ForumPostsList(props) {
     
     <div className="forum-post-board">
       {props.userId ? (
-        <Form currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
+        <Form setPost={props.setPost} setForumSubGenre={props.setForumSubGenre} setForumGenre={props.setForumGenre} genre={props.genre} subGenre={props.subGenre} currentUserAvatar={props.currentUserAvatar} userId={props.userId} subgenreId={props.posts[0].id}/>
       ) : (
         <div> </div>
       )}
@@ -49,15 +49,15 @@ export default function ForumPostsList(props) {
 
           return (
               
-            <article className="each-article dotted">
-              <div className="post-user-profile">
-                <span>{item.user.username}</span>
-                <img className="post-user-avatar" src={item.user.avatar} />
+            <article className="each-article dotted" key={item.id}>
+              <div key={item.id+1} className="post-user-profile">
+                <span key={item.id+2} >{item.user.username}</span>
+                <img key={item.id+3} className="post-user-avatar" src={item.user.avatar} />
               </div>
-              <div className="post-content">
-                <p>{item.comment}</p>
+              <div key={item.id+4} className="post-content">
+                <p key={item.id+5} >{item.comment}</p>
                 {props.userId ? (
-                  <LikeCount post={item} />
+                  <LikeCount key={item.id+6} post={item} />
                 ) : (
                   <div> </div>
                 )}
