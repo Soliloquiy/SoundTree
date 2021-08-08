@@ -98,7 +98,7 @@ export default function Application(props) {
   const [userSubgenreIds, setUserSubgenreIds] = useState([]);
   
   /****Retrieve all of the subgenres and songs associated with the current user******/
-  //please remove dependency for better console log
+  // remove dependency for better console log
   useEffect(() => {
     axios
       .get("api/profile.json")

@@ -1,5 +1,4 @@
-import React, { useState, useEffect} from "react";
-import axios from "axios";
+import React from "react";
 import FollowButton from "../FollowButton"
 import "./SubGenreList.scss"
 
@@ -54,11 +53,12 @@ export default function SubGenreList(props) {
                   <section className="follow-section">
 
                     {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
-
-                      <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                      <div className="follow-button-container">
+                        <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                      </div>
     
                     ) : (
-                      <div> </div>
+                      <div className="follow-button-container"> </div>
                     )}
                     
                   </section>
@@ -87,10 +87,12 @@ export default function SubGenreList(props) {
    
                 {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
                 
-                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  <div className="follow-button-container">
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  </div>
 
                 ) : (
-                  <div> </div>
+                  <div className="follow-button-container"> </div>
                 )}
               </section>
               )
@@ -116,10 +118,12 @@ export default function SubGenreList(props) {
 
               {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                <div className="follow-button-container">
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                </div>
 
               ) : (
-                <div> </div>
+                <div className="follow-button-container"> </div>
               )}
               </section>
               
@@ -144,10 +148,12 @@ export default function SubGenreList(props) {
               </section>
               {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                <div className="follow-button-container">
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                </div>
 
               ) : (
-                <div> </div>
+                <div className="follow-button-container"> </div>
               )}
               </section>
               
@@ -172,10 +178,12 @@ export default function SubGenreList(props) {
                 </section>
                 {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  <div className="follow-button-container">
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  </div>
 
                 ) : (
-                <div> </div>
+                <div className="follow-button-container"> </div>
                 )}
                 </section>
                 
