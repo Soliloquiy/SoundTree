@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
+import axios from "axios";
 import FollowButton from "../FollowButton"
 import "./SubGenreList.scss"
 
@@ -13,6 +14,7 @@ let middleRow;
 let middleRow2;
 let middleRow3;
 let bottomRow;
+
 
 export default function SubGenreList(props) {
 
@@ -31,10 +33,10 @@ export default function SubGenreList(props) {
         return (
           <div >
             
-
             <section className="top-spacing">
               
             {topRow.map((subgenre) => {
+              
               return(
                 <section className="top">
                   <section
@@ -46,25 +48,29 @@ export default function SubGenreList(props) {
                       <span aria-hidden class="cybr-btn__glitch">{subgenre.name}_</span>
                       <span aria-hidden class="cybr-btn__tag">R25</span>
                     </button>
-
                     
-                    </section>
-                    <section className="follow-section">
-                      {props.userId ? (
-                      <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                      ) : (
-                        <div> </div>
-                      )}
-                      </section>
-
                   </section>
-                  
+
+                  <section className="follow-section">
+
+                    {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
+                      <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+    
+                    ) : (
+                      <div> </div>
+                    )}
+                    
+                  </section>
+
+                </section>  
                   
               )
             })}
             </section>
             <section className="middle-spacing">
             {middleRow.map((subgenre) => {
+
               return(
                 <section className="middle">
                 <section
@@ -78,8 +84,11 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
-                <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+   
+                {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+                
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+
                 ) : (
                   <div> </div>
                 )}
@@ -104,11 +113,14 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
+
+              {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
                 <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                ) : (
-                  <div> </div>
-                )}
+
+              ) : (
+                <div> </div>
+              )}
               </section>
               
               )
@@ -130,11 +142,13 @@ export default function SubGenreList(props) {
                     </button>
                 
               </section>
-              {props.userId ? (
+              {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
                 <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
-                ) : (
-                  <div> </div>
-                )}
+
+              ) : (
+                <div> </div>
+              )}
               </section>
               
               )
@@ -156,10 +170,12 @@ export default function SubGenreList(props) {
                     </button>
                 
                 </section>
-                {props.userId ? (
+                {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
+
                 <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+
                 ) : (
-                  <div> </div>
+                <div> </div>
                 )}
                 </section>
                 
