@@ -17,7 +17,7 @@ export default function ForumSubGenreList(props) {
     <ul>
       {props.genres.map((item) => {
         return (
-          <div className="forum-sub-genre">
+          <div key={item.id} className="forum-sub-genre">
             <br></br>
             { item.subgenres.map((subgenre) => <div>
             <li

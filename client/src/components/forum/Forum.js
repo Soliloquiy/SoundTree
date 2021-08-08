@@ -13,8 +13,10 @@ export default function Forum(props) {
     forumSubGenre: "",
     forumSubGenres: [],
     forumPostsForGenre: [],
+    post:""
   })
-  
+  console.log(state.post)
+
   useEffect(() => {
     Promise.all([
       axios.get("/api/genres"),
@@ -28,8 +30,100 @@ export default function Forum(props) {
     });
   }, []);
 
+
+
+
+  
+
+  
+
+
+
+
+
+  const setPost = (post) => setState({ ...state, post }); 
   const setForumGenre = (forumGenre) => setState({ ...state, forumGenre }); 
   const setForumSubGenre = (forumSubGenre) => setState({ ...state, forumSubGenre });
+
+  useEffect(() => {
+    console.log("here1")
+    
+    
+
+    Promise.all([
+      axios.get("/api/genres"),
+      axios.get("/api/forum"),
+    ]).then((all) => {
+
+      console.log(all[1].data)
+    
+      setState((prev) => ({
+        ...prev,
+        genres: all[0].data,
+        forumGenres: all[1].data,
+      }));
+
+      console.log(all[1].data)
+
+      if (state.post) {
+      // console.log(currentForumPosts)
+      // console.log(state.forumSubGenres)
+      // console.log(state.forumGenres)
+  
+      
+      // setState((prev) => ({
+      //   ...prev,
+      //   forumPostsForGenre: currentForumPosts
+      // }))
+        
+      }
+      
+      // setForumGenre("roots")
+      // setForumSubGenre("roots")
+      
+      // props.setForumSubGenre(JSON.parse(localStorage.getItem("subgenre")))
+
+      console.log("here")
+
+      // console.log(state.forumGenre)
+      // console.log(state.forumSubGenre)
+      // console.log(state.post)
+    })
+  }, [state.post]);
+
+  useEffect(() => {
+    
+
+    if(state.forumSubGenre) {
+      const currentForumSubGenres = getForumSubGenresWithGenre(state, state.forumGenre)
+      setState((prev) => ({
+        ...prev,
+        forumSubGenres: currentForumSubGenres.subgenres
+      }))
+      // console.log(state.forumGenres)
+    }
+    
+  }, [state.forumGenres]);
+
+  useEffect(() => {
+    
+
+    if(state.forumSubGenre) {
+    const currentForumPosts = getForumPostsForSubGenre(state, state.forumSubGenre)
+
+    
+    setState((prev) => ({
+      ...prev,
+      forumPostsForGenre: currentForumPosts
+    }))
+      console.log(state.forumSubGenres)
+    }
+    
+  }, [state.forumSubGenres]);
+
+ 
+  
+
 
   function getForumSubGenresWithGenre(state, genreName) {
     const foundGenre = state.forumGenres.filter((genre) => genre.name === genreName)[0];
@@ -59,6 +153,7 @@ export default function Forum(props) {
 
   const currentForumSubGenres = getForumSubGenresWithGenre(state, state.forumGenre)
 
+
   useEffect(() => {
     
     setState((prev) => ({
@@ -70,6 +165,7 @@ export default function Forum(props) {
 
   useEffect(() => {
     const currentForumPosts = getForumPostsForSubGenre(state, state.forumSubGenre)
+    console.log(currentForumPosts)
 
     
     setState((prev) => ({
@@ -85,7 +181,7 @@ export default function Forum(props) {
     <div className="forum-index-page">
       <ForumGenreList setGenre={setForumGenre} genres={state.forumGenres} />
       <ForumSubGenreList userId={props.currentUserId} setSubGenre={setForumSubGenre} genre={state.forumGenre} genres={[currentForumSubGenres]} />
-      <ForumPostsList currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} subGenre={state.ForumSubGenre} posts={[state.forumPostsForGenre]} />
+      <ForumPostsList setPost={setPost} setForumSubGenre={setForumSubGenre} setForumGenre={setForumGenre} genre={state.forumGenre} currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} subGenre={state.forumSubGenre} posts={[state.forumPostsForGenre]} />
     </div>
     
   )

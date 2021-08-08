@@ -16,15 +16,14 @@ export default function ForumGenreList(props) {
         <ul >
           {props.genres.map((item) => {
             return (
-              <div className="forum-genre">
+              <div key={item.id} className="forum-genre">
                 <li
-                  key={item.id}
+                  key={item.id+1}
                   className="genre-list__item"
                   // selected={item.name === state.genre}
                   onClick={() => props.setGenre(item.name)}
                 >
-                  {console.log(item.name)}
-                  <span class="text--regular">{item.name}</span>
+                  <span key={item.id+2} className="text--regular">{item.name}</span>
                   </li>
               </div>
             );
