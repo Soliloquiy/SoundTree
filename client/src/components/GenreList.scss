@@ -1,22 +1,22 @@
 // .genre-list__item {
 //   color: yellow;
 // }
+
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 .main {
   background-color: black;
 }
 
-@font-face {
-  font-family: Cyber;
-  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
-  font-display: swap;
-}
 
 .sidebar {
   position: fixed;
-  width: 15%;
+  width: 25%;
   height: 100vh;
   // margin-top: 20em;
   background: #161B22;
+  z-index: +2;
+  font-family: 'Tomorrow';
+  cursor: progress;
 }
 
 .side-nav {
@@ -27,6 +27,7 @@
   top: 35%;
   transform: translateY(-50%);
   font-weight: bold;
+  
 }
 
 .side-nav ul {
@@ -34,10 +35,9 @@
   
   li {
     position: relative;
-    color: #d600ff;
+    color: yellow;
     font-family: 'Cyber';
     text-transform: uppercase;
-    cursor: pointer;
     margin-top: 2em;
     
     
@@ -53,7 +53,7 @@ li.cyberpunk:before {
   left: 2px;
   width: 100%;
   height: 10px;
-  background-color: #5B13EC;
+  background-color: #00B8FF;
   clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
 }
 li.cyberpunk.glitched {
@@ -106,5 +106,5 @@ li.cyberpunk.glitched:before {
 }
 
 .home-layout {
-  background: black;
+  background: #00B8FF;
 }

@@ -1,0 +1,164 @@
+// .genre-list__item {
+//   color: yellow;
+// }
+.main {
+  background-color: black;
+}
+
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
+.sidebar-forum {
+  position: fixed;
+  width: 15%;
+  height: 100vh;
+  // margin-top: 20em;
+  background: #161B22;
+  z-index: +1;
+}
+
+.side-nav {
+  position: relative;
+  // margin: 0 5%;
+  margin-right: 1em;
+  text-align: right;
+  top: 35%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.side-nav-forum ul {
+  list-style: none;
+  
+  li {
+    position: relative;
+    color: yellow;
+    font-family: 'Cyber';
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 2em;
+    // text-align: right;
+    
+    
+  }
+
+  li.cyberpunk:before {
+    margin-right: 5px;
+    padding-bottom: 45px;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 60%;
+    height: 10px;
+    background-color: #00B8FF;
+    clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+  }
+  li.cyberpunk.glitched {
+    animation-name: glitched;
+    animation-duration: calc(.9s * 1.4);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes glitched {
+    0% { left: -4px; transform: skew(-20deg); }
+    11% { left: 2px; transform: skew(0deg); }
+    50% { transform: skew(0deg); }
+    51% { transform: skew(10deg); }
+    60% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+  }
+  li.cyberpunk.glitched:before {
+    animation-name: beforeglitched;
+    animation-duration: calc(.9s * 2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes beforeglitched {
+    0% {
+      left: -4px;
+      transform: skew(-20deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    11% {
+      left: 2px;
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    50% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    51% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 40% 5px, calc(40% - 30px) 0px, calc(40% + 30px) 0px, calc(45% - 15px) 5px, 100% 5px, 100% 6px, calc(45% - 14px) 6px, calc(40% + 29px) 1px, calc(40% - 29px) 1px, calc(40% + 1px) 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    60% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    100% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+  }
+}
+
+
+
+/* Section */
+section.cyberpunk {
+  background-color: var(--yellow-color);
+  color: #000;
+  padding: 60px 60px;
+  position: relative;
+    margin-top: -1px;
+  margin-bottom: -1px;
+}
+section.cyberpunk:after,
+section.cyberpunk.clack:after {
+  content: " ";
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 30px;
+  background-color: #000;
+  position: absolute;
+  clip-path: polygon(0% 0%, 22% 0%, calc(22% + 30px) 30px, 52% 30px, calc(52% + 15px) 15px, 70% 15px, calc(70% + 15px) 30px, 90% 30px, calc(90% + 30px) 0px, 100% 0px, 100% 30px, 0px 30px);
+}
+
+section.cyberpunk.black:after {
+  background-color: var(--yellow-color);
+}
+
+section.cyberpunk.black {
+  background-color: #000;
+  color: var(--yellow-color);
+}
+
+section.cyberpunk:before,
+section.cyberpunk.black:before {
+  content: " ";
+  display: block;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 30px;
+  background-color: var(--yellow-color);
+  position: absolute;
+  clip-path: polygon(calc(22% + 28px) -1px, calc(22% + 45px) 15px, 34% 15px, calc(34% + 15px) -1px, 70% 0px)
+}
+
+section.cyberpunk:before {
+  background-color: #000;
+}
+
+section.cyberpunk.black img.cyberpunk {
+  border-color: var(--yellow-color);
+  background-color: var(--yellow-color);
+}

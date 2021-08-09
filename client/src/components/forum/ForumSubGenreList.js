@@ -1,4 +1,5 @@
 import React from "react";
+import "./ForumSubGenreList.scss"
 
 
 // const genreClass = classNames("genre-list__item", {
@@ -14,25 +15,47 @@ export default function ForumSubGenreList(props) {
     return []
   } else {
   return (
-    <ul>
+      <div>
       {props.genres.map((item) => {
         return (
+          
           <div key={item.id} className="forum-sub-genre">
+            
             <br></br>
+            <div class="btn-group">
+            <h1 class="info__title">Select the board</h1>
+            <div class="btn-group-inner">
+              
             { item.subgenres.map((subgenre) => <div>
-            <li
-              key={subgenre.id}
-              className="forum-sub-genre__name"
-              onClick={() => props.setSubGenre(subgenre.name)}
-            >
-            {subgenre.name}
-            </li>
+              
+              
+              
+                <button class="btn btn--list"
+                key={subgenre.id}
+                onClick={() => props.setSubGenre(subgenre.name)}
+                >
+                  <div class="btn__content">
+                  </div>
+                  {subgenre.name}
+
+                  <span class="btn__label">r23</span>
+                </button>
+                
+                
+              
+  
+
+            
+
+
             
             </div>)}
+            </div>
+            </div>
             
           </div>
         );
       })}
-    </ul>
+      </div>
   )};
 }
