@@ -1,4 +1,5 @@
 import React from "react";
+import "./SongsForSubGenre.scss"
 
 
 // const genreClass = classNames("genre-list__item", {
@@ -20,15 +21,19 @@ export default function SongsForSubGenre(props) {
     <ul>
       {props.songs.map((item) => {
         return (
-          <div className="App">
+          <div className="discover-music-list">
             <br></br>
-            <li key={item.id}>{item.name}</li>
+            <li key={item.id}>
+              <span className="neon">
+                {item.name}
+              </span>
+            </li>
             { item.songs.map((song) => 
-            <div>
+            <div className="song-list">
             <li key={song.id}>
-              Song Name: {song.name} 
-              Song Artist: {song.artist} 
-              Song Album: {song.album} 
+              <span className="song-name">☢ {song.name} </span>
+              <span className="artist-name"> Artist: </span> {song.artist}
+              <span className="album-name"> Album: </span> {song.album}
             </li>
             </div>)}
           </div>

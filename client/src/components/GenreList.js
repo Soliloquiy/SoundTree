@@ -13,8 +13,8 @@ import "./GenreList.scss"
 export default function GenreList(props) {
 
   return (
-    <aside className="sidebar">
-      <nav className="side-nav">
+    <aside className="discover-sidebar">
+      <nav className="discover-side-nav">
         <ul >
           {props.genres.map((item) => {
             return (
