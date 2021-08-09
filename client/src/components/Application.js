@@ -96,6 +96,7 @@ export default function Application(props) {
 
   
   const [userSubgenreIds, setUserSubgenreIds] = useState([]);
+  const [follow, setFollow] = useState(0);
   
   /****Retrieve all of the subgenres and songs associated with the current user******/
   // remove dependency for better console log
@@ -105,7 +106,7 @@ export default function Application(props) {
       .then((response) => {
         setUserSubgenreIds(getUserSubgenreIds(response.data))
     })
-  }, []);
+  }, [follow]);
 
   
   function getUserSubgenreIds(data) {
@@ -124,7 +125,7 @@ export default function Application(props) {
   return (
     <main className="home-layout">
       <GenreList setGenre={setGenre} genres={state.genres}  /> <br></br>
-      <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} userSubgenreIds={userSubgenreIds} />
+      <SubGenreList userId={props.currentUserId} setSubGenre={setSubGenre} genre={state.genre} genres={[currentSubGenres]} userSubgenreIds={userSubgenreIds} follow={follow} setFollow={setFollow}/>
       <SongsForSubGenre subGenre={state.subGenre} songs={[currentSongs]} />
     </main>
   )
