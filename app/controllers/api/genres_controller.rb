@@ -1,6 +1,5 @@
 require 'pp'
 require 'rspotify'
-#require './spotify_genres'
 
 class Api::GenresController < ApplicationController
 

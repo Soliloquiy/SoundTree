@@ -15,6 +15,7 @@ export default function UserGenreList(props) {
                   onClick={() => {
                     props.setSubGenre(subgenre);
                     props.getSongsByGenre(subgenre);
+                    props.getSongURIs(subgenre);
                   }}
                 >
                   <h3 class="text--regular">{subgenre}</h3>
