@@ -1,10 +1,20 @@
-.song-list__item {
+.songs {
   display: flex;
+  flex-direction: column;
   align-self: center;
+  justify-content: flex-end;
   color: rgb(6, 52, 62);
   width: 1000px;
   top: auto;
   bottom: 0px;
   right: 0px;
   left: auto;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-left: 15%;
+  width: 85%;
 }
