@@ -54,7 +54,7 @@ export default function SubGenreList(props) {
 
                     {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
                       <div className="follow-button-container">
-                        <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                        <FollowButton userId={props.userId} subgenre_id={subgenre.id} follow={props.follow} setFollow={props.setFollow}/>
                       </div>
     
                     ) : (
@@ -88,7 +88,7 @@ export default function SubGenreList(props) {
                 {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
                 
                   <div className="follow-button-container">
-                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} follow={props.follow} setFollow={props.setFollow}/>
                   </div>
 
                 ) : (
@@ -119,7 +119,7 @@ export default function SubGenreList(props) {
               {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
                 <div className="follow-button-container">
-                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} follow={props.follow} setFollow={props.setFollow}/>
                 </div>
 
               ) : (
@@ -149,7 +149,7 @@ export default function SubGenreList(props) {
               {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
                 <div className="follow-button-container">
-                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                  <FollowButton userId={props.userId} subgenre_id={subgenre.id} follow={props.follow} setFollow={props.setFollow}/>
                 </div>
 
               ) : (
@@ -179,7 +179,7 @@ export default function SubGenreList(props) {
                 {(props.userId && !props.userSubgenreIds.includes(subgenre.id)) ? (
 
                   <div className="follow-button-container">
-                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} />
+                    <FollowButton userId={props.userId} subgenre_id={subgenre.id} follow={props.follow} setFollow={props.setFollow}/>
                   </div>
 
                 ) : (

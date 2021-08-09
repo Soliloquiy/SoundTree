@@ -27,12 +27,16 @@ export default function FollowButton(props) {
       .post(`/api/follow.json`, data)
       .then(() => {  
         console.log("post create sent to rails")
+        props.setFollow(props.subgenre_id)
+
       })
   }
 
   return (
     <div className="follow">
-      <button className="follow-button" onClick={() => {sendFollow(props.userId, props.subgenre_id)}} > Follow </button>
+      <button className="follow-button" onClick={() => {sendFollow(props.userId, props.subgenre_id)}} > 
+        Follow 
+      </button>
     </div>
   );
 }
