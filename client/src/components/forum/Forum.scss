@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
 :root {
   --neon-green-color: #00FF9F;
   --neon-purple-color: #BD00FF;
@@ -8,26 +10,7 @@
 .forum-index-page {
   display: flex;
   color: #fff;
-}
-
-.forum-sub-genre {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  right: 0px;
-  background-color: #21262D;
-  text-align: center;
-  color: #fff;
-  width: 85%;
-
-  li {
-    margin: 1em 1.5em;
-    list-style-type: none;
-  }
-
-  li:hover {
-    cursor: pointer;
-  }
+  font-family: Tomorrow;
 }
 
 .forum-post-board {
@@ -38,6 +21,7 @@
   right: 0px;
   top: 112px;
   padding: 2em;
+  margin-top: 13em;
 
   .post-user-avatar {
     height: 80px;
@@ -186,3 +170,6 @@
   }
 }
 
+.home-layout {
+  background: black;
+}

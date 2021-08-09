@@ -22,6 +22,7 @@ export default function SubGenreList(props) {
   } else {
   return (
     <section className="sub-genres">
+      <section class="cyberpunk">
       {props.genres.map((genres) => {
         {topRow = genres.subgenres.slice(0,1)}
         {middleRow = genres.subgenres.slice(1,3)}
@@ -30,7 +31,7 @@ export default function SubGenreList(props) {
         {bottomRow = genres.subgenres.slice(7)}
         {console.log(bottomRow)}
         return (
-          <div >
+          <div className="subgenre-font">
             
             <section className="top-spacing">
               
@@ -193,6 +194,8 @@ export default function SubGenreList(props) {
           </div>
         );
       })}
+</section>
+      
     </section>
   )};
 }

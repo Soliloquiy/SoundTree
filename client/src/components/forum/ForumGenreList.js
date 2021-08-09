@@ -1,4 +1,5 @@
 import React from "react";
+import "./ForumGenreList.scss"
 
 
 // const genreClass = classNames("genre-list__item", {
@@ -11,15 +12,15 @@ import React from "react";
 export default function ForumGenreList(props) {
 
   return (
-    <aside className="sidebar">
-      <nav className="side-nav">
+    <aside className="sidebar-forum">
+      <nav className="side-nav-forum">
         <ul >
           {props.genres.map((item) => {
             return (
               <div key={item.id} className="forum-genre">
                 <li
                   key={item.id+1}
-                  className="genre-list__item"
+                  className="cyberpunk glitched"
                   // selected={item.name === state.genre}
                   onClick={() => props.setGenre(item.name)}
                 >
