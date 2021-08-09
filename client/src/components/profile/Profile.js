@@ -4,7 +4,6 @@ import axios from "axios";
 import UserSongs from "./UserSongs";
 import UserGenreList from "./UserGenreList";
 import "./Profile.scss";
-const SpotifyWebApi = require("spotify-web-api-node");
 
 export default function Profile(props) {
   const userID = props.id;
@@ -27,7 +26,8 @@ export default function Profile(props) {
   }, []);
 
   /****get the Spotify token based on client id and client secret******/
-  const { REACT_APP_CLIENTID, REACT_APP_CLIENTSECRET } = process.env;
+  const { REACT_APP_CLIENTID, REACT_APP_CLIENTSECRET, REACT_APP_TOKEN } =
+    process.env;
   const [token, setToken] = useState("");
   const spotifyAuth = btoa(`${REACT_APP_CLIENTID}:${REACT_APP_CLIENTSECRET}`);
   useEffect(() => {
@@ -117,19 +117,9 @@ export default function Profile(props) {
     });
   }
 
-  // // credentials are optional
-  // const spotifyApi = new SpotifyWebApi({
-  //   clientId: REACT_APP_CLIENTID,
-  //   clientSecret: REACT_APP_CLIENTSECRET,
-  //   redirectUri: "http:localhost/3000/api/profile",
-  // });
-  // console.log(spotifyApi.getartists);
-
-  //spotifyApi.se((tAccessToken(token);
-  console.log(getSongURIs(state.subgenre)[0]);
   /****Render the HTML for the current user profile******/
   return (
-    <main className="layout">
+    <main className="profile-layout">
       <UserGenreList
         subgenre={state.subgenre}
         subgenreId={getSubGenreID(state.genre)}
@@ -144,6 +134,7 @@ export default function Profile(props) {
         subgenre={state.subgenre}
         songs={getSongsByGenre(state.subgenre)}
         uris={getSongURIs(state.subgenre)}
+        token={REACT_APP_TOKEN}
       />
     </main>
   );

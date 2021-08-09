@@ -85,7 +85,7 @@ export default function App() {
           </Route>
 
           <Route path="/profile">
-            <Profile id={1} />
+            <Profile id={currentId} />
           </Route>
 
           <Route path="/forum">
