@@ -3,35 +3,35 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useHistory
+  useHistory,
 } from "react-router-dom";
-import './App.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import "./App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import "./Navigation.scss";
-import Application from './components/Application';
+import Application from "./components/Application";
 import Login from "./components/Login";
-import Register from './components/Register';
+import Register from "./components/Register";
 import Forum from "./components/forum/Forum";
+import Profile from "./components/profile/Profile";
 
 export default function App() {
   let currentUser;
   let currentId;
-  let currentAvatar
+  let currentAvatar;
   let button;
   let history = useHistory();
 
   currentUser = JSON.parse(localStorage.getItem("user"));
-  console.log(`current user: ${currentUser}`)
-  console.log(`current user typeof: ${typeof currentUser}`)
+  console.log(`current user: ${currentUser}`);
+  console.log(`current user typeof: ${typeof currentUser}`);
 
   if (currentUser) {
-    currentId = currentUser["id"]
+    currentId = currentUser["id"];
     currentAvatar = currentUser["avatar"];
   } else {
     currentId = null;
   }
-
 
   function logout() {
     localStorage.clear();
@@ -41,19 +41,20 @@ export default function App() {
   if (currentUser) {
     button = (
       <>
-      <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
-      <Nav.Link href="/" onClick={() => logout()}>Logout</Nav.Link>
+        <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
+        <Nav.Link href="/" onClick={() => logout()}>
+          Logout
+        </Nav.Link>
       </>
-    )
+    );
   } else {
     button = (
       <>
-      <Nav.Link href="/register">Register</Nav.Link>
-      <Nav.Link href="/login">Login</Nav.Link>
+        <Nav.Link href="/register">Register</Nav.Link>
+        <Nav.Link href="/login">Login</Nav.Link>
       </>
-    )
+    );
   }
-
 
   return (
     <Router>
@@ -61,12 +62,10 @@ export default function App() {
         <Navbar variant="dark" className="navigation-bar" sticky="top">
           <Container>
             <Navbar.Brand href="/">SoundTree</Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="/forum">Forum</Nav.Link>            
-              </Nav>
-              <Nav>
-                {button}
-              </Nav>
+            <Nav className="me-auto">
+              <Nav.Link href="/forum">Forum</Nav.Link>
+            </Nav>
+            <Nav>{button}</Nav>
           </Container>
         </Navbar>
 
@@ -74,8 +73,7 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Application 
-            currentUserId={currentId}/>
+            <Application currentUserId={currentId} />
           </Route>
 
           <Route path="/login">
@@ -87,13 +85,14 @@ export default function App() {
           </Route>
 
           <Route path="/profile">
-
+            <Profile id={1} />
           </Route>
 
           <Route path="/forum">
-            <Forum 
-            currentUserId={currentId}
-            currentUserAvatar={currentAvatar}/>
+            <Forum
+              currentUserId={currentId}
+              currentUserAvatar={currentAvatar}
+            />
           </Route>
         </Switch>
       </div>

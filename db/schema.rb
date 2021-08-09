@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_023603) do
+ActiveRecord::Schema.define(version: 2021_08_08_020913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 2021_08_04_023603) do
     t.string "artist"
     t.integer "subgenre_id"
     t.string "sub_genre_name"
+    t.string "uri"
+    t.string "image"
+    t.string "href"
+    t.string "track_id"
   end
 
   create_table "subgenres", force: :cascade do |t|

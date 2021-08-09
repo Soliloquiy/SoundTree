@@ -4,11 +4,14 @@ import axios from "axios";
 import UserSongs from "./UserSongs";
 import UserGenreList from "./UserGenreList";
 import "./Profile.scss";
+const SpotifyWebApi = require("spotify-web-api-node");
 
 export default function Profile(props) {
+  const userID = props.id;
   /****Define useState for the current user******/
   const [state, setState] = useState({
     subgenre: "",
+    uri: 0,
     usergenresongs: [],
   });
   /****Retrieve all of the subgenres and songs associated with the current user******/
@@ -17,13 +20,31 @@ export default function Profile(props) {
       setState((prev) => ({
         ...prev,
         usergenresongs: response.data.filter(
-          (usergenre) => usergenre.user_id === 1
+          (usergenre) => usergenre.user_id === userID
         ),
       }));
     });
   }, []);
 
-  console.log(state.usergenresongs);
+  /****get the Spotify token based on client id and client secret******/
+  const { REACT_APP_CLIENTID, REACT_APP_CLIENTSECRET } = process.env;
+  const [token, setToken] = useState("");
+  const spotifyAuth = btoa(`${REACT_APP_CLIENTID}:${REACT_APP_CLIENTSECRET}`);
+  useEffect(() => {
+    axios("https://accounts.spotify.com/api/token", {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        Authorization: `Basic ${spotifyAuth}`,
+      },
+      data: "grant_type=client_credentials",
+      method: "POST",
+    })
+      .then((tokenresponse) => {
+        //console.log("NEW TOKEN ", tokenresponse.data.access_token); //.access_token);
+        setToken(tokenresponse.data.access_token);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   const userGenres = []; // Genres that the current user follows
   const userGenresWithID = []; // Genres that the current user follows with subgenre ids
@@ -55,6 +76,14 @@ export default function Profile(props) {
     return userSongs;
   }
 
+  function getSongURIs(genre) {
+    const URIS = [];
+    for (const song in songsByGenre[genre]) {
+      URIS.push(songsByGenre[genre][song].uri);
+    }
+    return URIS;
+  }
+
   /****Get the subgenreid for the current subgenre ******/
   function getSubGenreID(genrename) {
     let subgenreid = 0;
@@ -69,10 +98,8 @@ export default function Profile(props) {
   /***FInd the usergenre id for the current user and subgenre */
   function getUserGenreID(genre) {
     const subgenre_id = getSubGenreID(genre);
-    const user_id = 1;
+    const user_id = userID;
     for (const userGenre in state.usergenresongs) {
-      console.log("USERID ", state.usergenresongs[userGenre].user_id);
-      console.log("GENREID ", state.usergenresongs[userGenre].subgenre_id);
       if (
         state.usergenresongs[userGenre].user_id === user_id &&
         state.usergenresongs[userGenre].subgenre_id === subgenre_id
@@ -90,6 +117,16 @@ export default function Profile(props) {
     });
   }
 
+  // // credentials are optional
+  // const spotifyApi = new SpotifyWebApi({
+  //   clientId: REACT_APP_CLIENTID,
+  //   clientSecret: REACT_APP_CLIENTSECRET,
+  //   redirectUri: "http:localhost/3000/api/profile",
+  // });
+  // console.log(spotifyApi.getartists);
+
+  //spotifyApi.se((tAccessToken(token);
+  console.log(getSongURIs(state.subgenre)[0]);
   /****Render the HTML for the current user profile******/
   return (
     <main className="layout">
@@ -100,11 +137,13 @@ export default function Profile(props) {
         getSongsByGenre={getSongsByGenre}
         subgenres={userGenres}
         deleteUserGenre={deleteUserGenre}
+        getSongURIs={getSongURIs}
       />
       <UserSongs
         setSubGenre={setSubGenre}
         subgenre={state.subgenre}
         songs={getSongsByGenre(state.subgenre)}
+        uris={getSongURIs(state.subgenre)}
       />
     </main>
   );

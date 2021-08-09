@@ -1,6 +1,6 @@
 class Api::RecommendationsController < ApplicationController
   def index
-    @recommendations = RSpotify::Recommendations.generate(seed_genres: ['blues', 'country'])
+    @recommendations = RSpotify::Track.search("metal")
     render json: @recommendations
   end
 end

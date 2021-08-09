@@ -104,12 +104,6 @@ require 'rspotify'
       genre_id: new_genre.id
     })
 
-    # t.string "name"
-    # t.string "album"
-    # t.string "artist"
-    # t.integer "subgenre_id"
-    # t.string "sub_genre_name"
-
     subgenre_songs = RSpotify::Track.search(genre_child.to_s)
     subgenre_songs.each do |genre_song|
       Song.create!({
@@ -117,7 +111,11 @@ require 'rspotify'
         sub_genre_name: new_subgenre.name,
         name: genre_song.name,
         album: genre_song.album.name,
-        artist: genre_song.artists[0].name
+        artist: genre_song.artists[0].name,
+        uri: genre_song.uri,
+        image: genre_song.album.images[2],
+        href: genre_song.href,
+        track_id: genre_song.id
       })
     end
 
