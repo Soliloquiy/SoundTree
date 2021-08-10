@@ -46,10 +46,10 @@
       width: calc(100% - 30px);
       background-color: transparent;
       color: #fff;
-      border: 30px solid #00ff9f;
-      border-left: 5px solid #d600ff;
-      border-right: 5px solid #00ff9f;
-      border-bottom: 15px solid 	#bd00ff;
+      border: 30px solid rgb(18, 135, 171);
+      border-left: 5px solid rgb(18, 135, 171);
+      border-right: 5px solid rgb(44, 33, 147);
+      border-bottom: 15px solid 	rgb(44, 33, 147);
       clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px calc(100% - 0px), 0% calc(100% - 10px));
       padding: 12px;
       resize: none;
@@ -124,11 +124,11 @@
     padding: 5px;
     position: relative;
     font-size: 1.2rem;
-    color: var(--neon-green-color);
-    border: 30px solid var(--neon-green-color);
-    border-right: 5px solid var(--neon-green-color);
-    border-left: 5px solid var(--neon-purple-color);
-    border-bottom: 24px solid var(--neon-purple-color);
+    color: rgb(150, 189, 10);
+    border: 30px solid rgb(18, 135, 171);
+    border-right: 5px solid rgb(44, 33, 147);
+    border-left: 5px solid rgb(18, 135, 171);
+    border-bottom: 24px solid rgb(44, 33, 147);
     background-color: #000;
     clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
   }
@@ -171,5 +171,5 @@
 }
 
 .home-layout {
-  background: black;
+  background: #161B22;
 }
