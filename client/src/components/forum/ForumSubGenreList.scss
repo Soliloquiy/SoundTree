@@ -5,7 +5,7 @@
   justify-content: center;
   position: absolute;
   right: 0px;
-  background-color: #21262D;
+  background-color: black;
   text-align: center;
   color: #fff;
   width: 85%;
@@ -221,7 +221,7 @@ $blueColor: #00f0ff;
     height: 0;
     border-width: 8px 8px 0 8px;
     border-style: solid;
-    border-color: $blackColor transparent $blackColor $blackColor;
+    border-color: purple transparent $blackColor $blackColor;
     position: absolute;
     bottom: -8px;
     left: 0;
@@ -235,8 +235,17 @@ $blueColor: #00f0ff;
   justify-content: center;
   width: 80%;
   gap: 0.2em;
+  padding-top: 1em;
   .btn:hover {
     background-color: #5B13EC;
     color: yellow;
   }
 }
+
+@media screen and (min-width: 1024px) { 
+
+
+  
+  
+  }
+

@@ -14,6 +14,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Forum from "./components/forum/Forum";
 import Profile from "./components/profile/Profile";
+import Articles from "./components/Articles";
+import LandingPage from "./components/LandingPage";
 
 export default function App() {
   let currentUser;
@@ -41,17 +43,21 @@ export default function App() {
   if (currentUser) {
     button = (
       <>
+      <Nav>
         <Nav.Link href="/profile">Welcome, {currentUser["username"]}</Nav.Link>
         <Nav.Link href="/" onClick={() => logout()}>
           Logout
         </Nav.Link>
+        </Nav>
       </>
     );
   } else {
     button = (
       <>
+      <Nav>
         <Nav.Link href="/register">Register</Nav.Link>
         <Nav.Link href="/login">Login</Nav.Link>
+        </Nav>
       </>
     );
   }
@@ -59,12 +65,15 @@ export default function App() {
   return (
     <Router>
       <div>
-        <Navbar variant="dark" className="navigation-bar" sticky="top">
+        <Navbar variant="dark" className="navigation-bar" Text style={{ fontFamily: 'test' }} sticky="top">
           <Container>
             <Navbar.Brand href="/">SoundTree</Navbar.Brand>
-            <Nav className="me-auto">
+            <Nav>
               <Nav.Link href="/forum">Forum</Nav.Link>
+              <Nav.Link href="/discover">Discover</Nav.Link>
+              <Nav.Link href="/articles">Latest News</Nav.Link>
             </Nav>
+           
             <Nav>{button}</Nav>
           </Container>
         </Navbar>
@@ -73,7 +82,16 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            <Application currentUserId={currentId} />
+          <LandingPage />
+          </Route>
+
+          <Route exact path="/discover">
+          <Application currentUserId={currentId} />
+          </Route>
+
+
+          <Route path="/articles">
+            <Articles />
           </Route>
 
           <Route path="/login">

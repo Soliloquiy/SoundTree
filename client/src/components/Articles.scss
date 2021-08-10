@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+.articles-layout {
+  padding-top: 1em;
+  background: black;
+  color: yellow;
+  font-family: 'Tomorrow';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .cyberpunk {
+    color: purple;
+    padding-bottom: 0.5em;
+    margin-left: 1em;
+  }
+
+  .cyberpunk:before {
+    margin-left: 0em;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 100%;
+    height: 10px;
+    background-color: teal;
+    clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+  }
+  .cyberpunk.glitched {
+    animation-name: glitched;
+    animation-duration: calc(.9s * 1.4);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes glitched {
+    0% { left: -4px; transform: skew(-20deg); }
+    11% { left: 2px; transform: skew(0deg); }
+    50% { transform: skew(0deg); }
+    51% { transform: skew(10deg); }
+    60% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+  }
+  .cyberpunk.glitched:before {
+    animation-name: beforeglitched;
+    animation-duration: calc(.9s * 2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes beforeglitched {
+    0% {
+      left: -4px;
+      transform: skew(-20deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    11% {
+      left: 2px;
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    50% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    51% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 40% 5px, calc(40% - 30px) 0px, calc(40% + 30px) 0px, calc(45% - 15px) 5px, 100% 5px, 100% 6px, calc(45% - 14px) 6px, calc(40% + 29px) 1px, calc(40% - 29px) 1px, calc(40% + 1px) 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    60% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    100% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+  }
+
+  .top-header {
+    margin-left: 0.5em;
+    color: purple;
+    
+  }
+}
+
+.articles-list {
+  margin-top: 0.5em;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 15px 50px 30px;
+  border-color: teal;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  align-items: left;
+  h1 {
+    margin-left: 0.9em;
+    margin-top: 0.5em
+  }
+  p {
+    color: teal;
+    margin-top: 1em;
+    margin-left: 2em;
+  }
+  img {
+    -webkit-clip-path: polygon(100% 0, 100% 65%, 54% 100%, 0 100%, 0 0);
+clip-path: polygon(100% 0, 100% 65%, 54% 100%, 0 100%, 0 0);
+    margin-top: 0.5em;
+    margin-left: 2em;
+    width: 250px;
+  }
+}
+
+.articles-info {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(110, 1, 1, 0.7)), url("https://i.pinimg.com/564x/ff/f6/31/fff6317d9a4099c5740a61c0335f3344.jpg");
+  border-radius: 15px 50px 30px;
+  border-color: teal;
+  display: flex;
+  flex-direction: column;
+}

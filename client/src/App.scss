@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+/* START OF Change the Navbar Colors/Font/Size */
+/* Adjust Menu (red) text color, (Garamond) font-family, (1.5em) font-size  */
+.navbar {
+color:          red;                        
+font-family:    Garamond;
+font-size:      1.3em;
+padding:        5px 10em;
+display: flex;
+// justify-content: space-between;
+
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: teal !important;
+  font-family: Tomorrow !important;
+  text-transform: uppercase;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-right: 2em !important;
+  padding-left: 2em;
+}
+
+.navbar-brand {
+  font-size: 1.1em !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: teal !important;
+  font-family: Tomorrow !important;
+  margin-right: 1em !important;
+  margin-bottom: 1.3em;
+  margin-left: -7em;
+  text-transform: uppercase;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  width: 100%;
+  padding-right: .75rem;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: .75rem;
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: 1em !important; 
+}
+
+
+
+@media screen and (min-width: 1024px) { 
+  .navbar-brand {
+    font-size: 1.1em !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: teal !important;
+    font-family: Tomorrow !important;
+    // margin-right: 10em !important;
+    margin-bottom: -2.6em;
+    padding-top: -10em !important;
+    padding-bottom: 3.8rem !important;
+    margin-left: -7em;
+  }
+
+  // .navbar-expand .navbar-nav .nav-link {
+  //   padding-right: 2em !important;
+  //   padding-left: 15em;
+  // }
+
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  width: 100%;
+  padding-right: .75rem;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: .75rem;
+  padding-left: var(--bs-gutter-x,.75rem);
+  // margin-right: auto;
+  // margin-left: 0.5em !important; 
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-evenly !important;
+  // padding-left: 40px;
+  margin-bottom: 0 !important;
+  // padding-bottom: 1em;
+  list-style: none;
+  margin-left: 0em;
+  // margin-right: -7em;
+  gap: 5em;
+}
+
+.navbar {
+  color:          red;                        
+  font-family:    Garamond;
+  font-size:      1.3em;
+  padding:        5px 10em;
+  display: flex;
+  justify-content: space-between;
+  
+  
+  }
+
+}
