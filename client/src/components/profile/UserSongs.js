@@ -73,12 +73,12 @@ import "./UserSongs.scss";
 
 export default function UserSongs(props) {
   return (
-    <Container className="songs">
+    <div className="user-song-list">
       <div>
         <ul>
           {props.songs.map((song) => {
             return (
-              <div className="App">
+              <div className="user-song">
                 <li key={song}>
                   <li class="text--regular">{song}</li>
                 </li>
@@ -90,6 +90,6 @@ export default function UserSongs(props) {
       <div className="player">
         <Player token={props.token} uris={props.uris} />
       </div>
-    </Container>
+    </div>
   );
 }
