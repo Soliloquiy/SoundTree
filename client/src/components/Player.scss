@@ -1,31 +1,28 @@
-.player-layout {
+.player {
   background-color: #161b22;
+  width: 85%;
+  position: fixed;
+  bottom: 0;
 }
 
-.player-layout > button {
-  margin: 0 5em;
-  font-size: 20px;
-  background: transparent;
-  border: 0;
-  color: yellow;
-  letter-spacing: 3px;
-  line-height: 30px;
-  outline: transparent;
-  cursor: default;
-}
 
-._ContentRSWP {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 .rswp__toggle {
-  margin: 0 300px;
-}
-._ControlsRSWP {
-  width: 50%;
-  margin: 0 20%;
+  background: transparent;
+  color: yellow;
+  box-shadow: none;
 }
 
-//linear-gradient(45deg, transparent 5%, #040e0a56 5%);
+.__yf4nh5 > button {
+  background: transparent;
+  box-shadow: none;
+}
+
+.__19rmsjf > button {
+  background: transparent;
+  box-shadow: none;
+}
+
+.__12o5mxo button {
+  background: transparent;
+  box-shadow: none;
+}

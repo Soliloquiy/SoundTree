@@ -70,7 +70,6 @@ import "./Player.scss";
 
 export default function Player(props) {
   return (
-    <div className="player-layout">
       <SpotifyPlayer
         styles={{
           activeColor: "#1cb954",
@@ -94,7 +93,6 @@ export default function Player(props) {
         token={props.token}
         uris={props.uris}
       />
-    </div>
   );
 }
 

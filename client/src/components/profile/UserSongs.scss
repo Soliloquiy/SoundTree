@@ -1,6 +1,7 @@
 .user-song-list {
   width: 85%;
   margin-left: 15%;
+  padding: 2em 0;
   font-family: "Tomorrow";
   color: #fff ;
   display: flex;
@@ -79,11 +80,4 @@
     text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
     color: #806914;
   }
-}
-
-
-.player {
-  display: flex;
-  margin-left: 40%;
-  width: 100%;
 }
