@@ -42,7 +42,7 @@ export default function SongsForSubGenre(props) {
           );
         })}
       </ul>
-      <div className="player">
+      <div className="discover-player">
          <Player token={props.token} uris={props.uris} />
       </div>
     </div>
