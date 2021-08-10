@@ -1,6 +1,4 @@
-.user-genre-list {
-  color: greenyellow;
-}
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
 .user-sidebar {
   position: fixed;
@@ -8,6 +6,8 @@
   height: 100vh;
   background: #161b22;
   font-size: 0.70em;
+  border-right: 0.3px solid #b4ba00 ;
+  box-shadow: 2px 0 0.4em #ede293;
 }
 
 .user-side-nav {
@@ -17,6 +17,7 @@
   top: 38%;
   transform: translateY(-50%);
   font-weight: bold;
+  font-family: "Tomorrow";
 }
 
 .user-side-nav ul {
@@ -31,7 +32,7 @@
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: 0.4em;
-      color: rgba(#fff, 0.35);
+      color: rgba(rgb(29, 179, 179), 0.65);
       display: block;
       transition: all ease-out 300ms;
     }
@@ -45,7 +46,7 @@
     }
 
     &:not(.active):hover span {
-      color: rgba(#fff, 0.75);
+      color: rgba(yellow, 0.85);
       cursor: pointer;
     }
 
@@ -66,12 +67,12 @@
   width: 80px;
   height: 15px;
   font-size: 10px;
-  background: linear-gradient(45deg, transparent 5%, yellow 5%);
+  background: linear-gradient(45deg, transparent 5%, #b4ba00 5%);
   border: 0;
   color: #000;
   letter-spacing: 3px;
   line-height: 10px;
-  box-shadow: 6px 0px 0px blue;
+  box-shadow: 6px 0px 0px #01578c;
   outline: transparent;
   position: relative;
   cursor: default;

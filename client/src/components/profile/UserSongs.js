@@ -1,6 +1,4 @@
 import React from "react";
-import SpotifyPlayer from "react-spotify-web-playback";
-import { Container } from "react-bootstrap";
 import Player from "../Player";
 import "./UserSongs.scss";
 
@@ -74,6 +72,7 @@ import "./UserSongs.scss";
 export default function UserSongs(props) {
   return (
     <div className="user-song-list">
+      <span className="neon">YOUR PLAYLIST</span>
       <div>
         <ul>
           {props.songs.map((song) => {

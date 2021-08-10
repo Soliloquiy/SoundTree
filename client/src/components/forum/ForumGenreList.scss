@@ -1,6 +1,4 @@
-// .genre-list__item {
-//   color: yellow;
-// }
+
 .main {
   background-color: black;
 }
@@ -16,8 +14,10 @@
   width: 20%;
   height: 100vh;
   // margin-top: 20em;
-  background: black;
+  background-color: #161B22;
   z-index: +1;
+  border-right: 0.5px solid rgb(220, 220, 22);
+  box-shadow: 2px 0 0.4em #ede293;
 }
 
 .side-nav {
@@ -36,7 +36,7 @@
   li {
     position: relative;
     color: yellow;
-    font-family: 'Cyber';
+    font-family: 'Tomorrow';
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 2em;
@@ -174,7 +174,7 @@ section.cyberpunk.black img.cyberpunk {
     width: 15%;
     height: 100vh;
     // margin-top: 20em;
-    background: black;
+    background: #161B22;
     z-index: +1;
   }
   
