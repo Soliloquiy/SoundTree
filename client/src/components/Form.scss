@@ -5,9 +5,9 @@
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background:#161B22;
+  background: #161b22;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
 
@@ -40,13 +40,13 @@
 
 .form-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .form-box .user-box input:focus ~ label,
@@ -57,12 +57,12 @@
   font-size: 12px;
 }
 
-.button {
+.submit-button {
   width: 180px;
   height: 60px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #91C9FF;
+  border: 1px solid #91c9ff;
   outline: none;
   transition: 1s ease-in-out;
   color: #fff;
@@ -81,7 +81,7 @@ svg {
 
 .button:hover {
   transition: 1s ease-in-out;
-  background: #4F95DA;
+  background: #4f95da;
 }
 
 .button:hover svg {

@@ -1,0 +1,31 @@
+.player-layout {
+  background-color: #161b22;
+}
+
+.player-layout > button {
+  margin: 0 5em;
+  font-size: 20px;
+  background: transparent;
+  border: 0;
+  color: yellow;
+  letter-spacing: 3px;
+  line-height: 30px;
+  outline: transparent;
+  cursor: default;
+}
+
+._ContentRSWP {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.rswp__toggle {
+  margin: 0 300px;
+}
+._ControlsRSWP {
+  width: 50%;
+  margin: 0 20%;
+}
+
+//linear-gradient(45deg, transparent 5%, #040e0a56 5%);
