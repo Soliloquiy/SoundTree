@@ -8,7 +8,7 @@ export default function UserGenreList(props) {
         <ul>
           {props.subgenres.map((subgenre) => {
             return (
-              <div className="App">
+              <div className="user-genre-list">
                 <li
                   key={subgenre}
                   className="genre-list__item"
@@ -20,6 +20,7 @@ export default function UserGenreList(props) {
                 >
                   <h3 class="text--regular">{subgenre}</h3>
                   <button
+                    className="unfollow-button"
                     onClick={() => {
                       props.setSubGenre(subgenre);
                       props.deleteUserGenre(subgenre);

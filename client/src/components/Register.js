@@ -7,14 +7,14 @@ export default function Register() {
     username: "",
     email: "",
     password: "",
-    avatar: ""
-  })
+    avatar: "",
+  });
 
   function handleChange(event) {
     const value = event.target.value;
     setState({
       ...state,
-      [event.target.name]: value
+      [event.target.name]: value,
     });
   }
 
@@ -22,9 +22,8 @@ export default function Register() {
 
   function save(event) {
     event.preventDefault();
-    registerUser(state.username, state.email, state.password, state.avatar)
-  };
-
+    registerUser(state.username, state.email, state.password, state.avatar);
+  }
 
   return (
     <div className="form-container">
@@ -32,54 +31,57 @@ export default function Register() {
         <h1>Register</h1>
 
         <div className="user-box">
-          <input 
-            type="text" 
+          <input
+            type="text"
             className="form-control"
-            placeholder="Username" 
+            placeholder="Username"
             name="username"
             value={state.username}
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="user-box">
-        <input 
-          type="text"
-          className="form-control"
-          placeholder="Email" 
-          name="email" 
-          value={state.email}
-          onChange={handleChange}
-        />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Email"
+            name="email"
+            value={state.email}
+            onChange={handleChange}
+          />
         </div>
 
         <div className="user-box">
-        <input 
-          type="text"
-          className="form-control"
-          placeholder="Password" 
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
         </div>
 
         <div className="user-box">
-        <input 
-          type="text"
-          className="form-control"
-          placeholder="Avatar Url" 
-          name="avatar"
-          value={state.avatar}
-          onChange={handleChange}
-        />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Avatar Url"
+            name="avatar"
+            value={state.avatar}
+            onChange={handleChange}
+          />
         </div>
 
-        <button className="button" type="submit" onClick={(event) => save(event)}>
+        <button
+          className="submit-button"
+          type="submit"
+          onClick={(event) => save(event)}
+        >
           <span>Register</span>
         </button>
       </form>
     </div>
-    
-  )
-};
+  );
+}

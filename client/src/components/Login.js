@@ -8,39 +8,38 @@ export default function Login() {
 
   const [state, setState] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   function handleChange(event) {
     const value = event.target.value;
     setState({
       ...state,
-      [event.target.name]: value
+      [event.target.name]: value,
     });
   }
-   
-  const { userLogin } = useUserAuthentication(); 
+
+  const { userLogin } = useUserAuthentication();
 
   function save(event) {
     event.preventDefault();
-    
-    userLogin(state.email, state.password)
-    .then((res) => {
-      console.log(`result back from userLogin: ${JSON.stringify(res)}`)
-      localStorage.setItem("user", JSON.stringify(res));
-    })
-    .then(() =>{
-      history.push("/");
-    })
 
-  };
+    userLogin(state.email, state.password)
+      .then((res) => {
+        console.log(`result back from userLogin: ${JSON.stringify(res)}`);
+        localStorage.setItem("user", JSON.stringify(res));
+      })
+      .then(() => {
+        history.push("/");
+      });
+  }
 
   return (
     <div className="form-container">
       <form className="form-box">
         <h1>Login</h1>
         <div className="user-box">
-          <input 
+          <input
             type="text"
             placeholder="Email"
             name="email"
@@ -48,9 +47,9 @@ export default function Login() {
             onChange={handleChange}
           />
         </div>
-        
+
         <div className="user-box">
-          <input 
+          <input
             type="password"
             placeholder="Password"
             name="password"
@@ -58,12 +57,17 @@ export default function Login() {
             onChange={handleChange}
           />
         </div>
-          
-        <button className="button" type="submit" onClick={(event) => {save(event)}}>
+
+        <button
+          className="submit-button"
+          type="submit"
+          onClick={(event) => {
+            save(event);
+          }}
+        >
           <span>Login</span>
         </button>
       </form>
     </div>
-    
-  )
-};
+  );
+}
