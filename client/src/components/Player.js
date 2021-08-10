@@ -1,6 +1,5 @@
 import React from "react";
 import SpotifyPlayer from "react-spotify-web-playback";
-import { Container } from "react-bootstrap";
 import "./Player.scss";
 
 // export interface Props {

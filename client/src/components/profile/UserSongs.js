@@ -1,6 +1,4 @@
 import React from "react";
-import SpotifyPlayer from "react-spotify-web-playback";
-import { Container } from "react-bootstrap";
 import Player from "../Player";
 import "./UserSongs.scss";
 
