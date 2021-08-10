@@ -6,6 +6,7 @@ import UserGenreList from "./UserGenreList";
 import "./Profile.scss";
 
 export default function Profile(props) {
+  const [unfollow, setUnfollow] = useState();
   const userID = props.id;
   /****Define useState for the current user******/
   const [state, setState] = useState({
@@ -23,7 +24,7 @@ export default function Profile(props) {
         ),
       }));
     });
-  }, []);
+  }, [unfollow]);
 
   /****get the Spotify token based on client id and client secret******/
   const { REACT_APP_CLIENTID, REACT_APP_CLIENTSECRET, REACT_APP_TOKEN } =
@@ -114,8 +115,12 @@ export default function Profile(props) {
     const usergenre_id = getUserGenreID(genre);
     return axios.post(`/api/follow/${usergenre_id}`, usergenre_id).then(() => {
       console.log("user genre deleted");
-    });
+    }).then(() => {
+      let num = Math.floor(Math.random() * 10)
+      setUnfollow(num);
+    })
   }
+
 
   /****Render the HTML for the current user profile******/
   return (
@@ -128,6 +133,7 @@ export default function Profile(props) {
         subgenres={userGenres}
         deleteUserGenre={deleteUserGenre}
         getSongURIs={getSongURIs}
+        setUnfollow={setUnfollow}
       />
       <UserSongs
         setSubGenre={setSubGenre}
