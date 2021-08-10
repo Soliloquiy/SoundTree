@@ -2,13 +2,13 @@
 /* START OF Change the Navbar Colors/Font/Size */
 /* Adjust Menu (red) text color, (Garamond) font-family, (1.5em) font-size  */
 .navbar {
-color:          red;                        
-font-family:    Garamond;
-font-size:      1.3em;
-padding:        5px 10em;
+color: red;                        
+font-family: Garamond;
+font-size: 1.3em;
+padding: 5px 10em;
 display: flex;
 // justify-content: space-between;
-
+border-bottom: 1px solid teal;
 
 }
 

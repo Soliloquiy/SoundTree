@@ -72,6 +72,7 @@ import "./UserSongs.scss";
 export default function UserSongs(props) {
   return (
     <div className="user-song-list">
+      <span className="neon">YOUR PLAYLIST</span>
       <div>
         <ul>
           {props.songs.map((song) => {
