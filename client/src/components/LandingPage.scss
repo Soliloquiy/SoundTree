@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+.articles-layout-1 {
+  padding-top: 1em;
+  background: black;
+  color: teal;
+  font-family: 'Tomorrow';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .cyberpunk {
+    color: purple;
+    padding-bottom: 0.5em;
+    margin-left: 0.5em;
+  }
+
+  .cyberpunk:before {
+    margin-left: 0em;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 100%;
+    height: 10px;
+    background-color: teal;
+    clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+  }
+  .cyberpunk.glitched {
+    animation-name: glitched;
+    animation-duration: calc(.9s * 1.4);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes glitched {
+    0% { left: -4px; transform: skew(-20deg); }
+    11% { left: 2px; transform: skew(0deg); }
+    50% { transform: skew(0deg); }
+    51% { transform: skew(10deg); }
+    60% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+  }
+  .cyberpunk.glitched:before {
+    animation-name: beforeglitched;
+    animation-duration: calc(.9s * 2);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes beforeglitched {
+    0% {
+      left: -4px;
+      transform: skew(-20deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    11% {
+      left: 2px;
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    50% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    51% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 40% 5px, calc(40% - 30px) 0px, calc(40% + 30px) 0px, calc(45% - 15px) 5px, 100% 5px, 100% 6px, calc(45% - 14px) 6px, calc(40% + 29px) 1px, calc(40% - 29px) 1px, calc(40% + 1px) 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    60% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+    100% {
+      transform: skew(0deg);
+      clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
+    }
+  }
+
+  .top-header {
+    margin-left: 0.5em;
+    color: purple;
+    
+  }
+}
+
+.articles-list {
+  margin-top: 0.5em;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 15px 50px 30px;
+  border-color: teal;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  align-items: left;
+  h1 {
+    margin-left: 0.9em;
+    margin-top: 0.5em
+  }
+  p {
+    color: yellow;
+    margin-top: 1em;
+    margin-left: 2em;
+  }
+  img {
+    -webkit-clip-path: polygon(100% 0, 100% 65%, 54% 100%, 0 100%, 0 0);
+clip-path: polygon(100% 0, 100% 65%, 54% 100%, 0 100%, 0 0);
+    margin-top: 0.5em;
+    margin-left: 2em;
+    width: 250px;
+  }
+}
+
+.articles-info {
+  border-radius: 15px 50px 30px;
+  border-color: teal;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-picture-info {
+
+  button {
+    width: 120px;
+    height: 35px;
+    font-size: 20px;
+    background: linear-gradient(45deg, transparent 5%, yellow 5%);
+    border: 0;
+    color: 	#000;
+    letter-spacing: 3px;
+    line-height: 30px;
+    box-shadow: 6px 0px 0px #d600ff;
+    outline: transparent;
+    position: relative;
+    cursor: default;
+    
+    
+  }
+
+  .top-landing-left {
+    color: yellow;
+    font-size: 1.5em;
+    padding-left: 1em;
+    position: absolute;
+    top: 8em;
+    // left: 16px;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+  
+  img {
+    width: 100%;
+    opacity: 0.5;
+    // height: 40em;
+  }
+
+  .landing-buttons-top {
+    padding-left: 2em;
+    display: flex;
+    flex-direction: row;
+    
+    
+
+    button:nth-child(2) {
+    color: black;
+    font-size: 1em;
+    position: absolute;
+    top: 30em;
+    left: 15em;
+
+    }
+  }
+
+  .landing-button {
+    color: black;
+    font-size: 1em;
+    position: absolute;
+    top: 30em;
+    // left: 16px;
+    margin-left: 18em;
+
+    
+  }
+
+  a {
+    text-decoration: none;
+    color: purple;
+  }
+
+
+}
+
+.pictures-info {
+  display: flex;
+  flex-direction: row;
+}
+
+// button, .landing-button::after {
+//   width: 120px;
+//   height: 35px;
+//   font-size: 20px;
+//   background: linear-gradient(45deg, transparent 5%, #00a2ff 5%);
+//   border: 0;
+//   color: 	#000;
+//   letter-spacing: 3px;
+//   line-height: 30px;
+//   box-shadow: 6px 0px 0px #d600ff;
+//   outline: transparent;
+//   position: relative;
+//   cursor: default;
+// }
+
+
+.landing-button::after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  Content: 'Glitch';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #fff 3%, #fff 5%, #00ff9f 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #fff;
+  clip-path: var(--slice-0);
+}
+.landing-button:hover::after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+@keyframes glitch {
+  0% { clip-path: var(--slice-1); transform: translate(-20px, -10px); }
+  10% { clip-path: var(--slice-3); transform: translate(10px, 10px); }
+  20% { clip-path: var(--slice-1); transform: translate(-10px, 10px); }
+  30% { clip-path: var(--slice-3); transform: translate(0px, 5px); }
+  40% { clip-path: var(--slice-2); transform: translate(-5px, 0px); }
+  50% { clip-path: var(--slice-3); transform: translate(5px, 0px); }
+  60% { clip-path: var(--slice-4); transform: translate(5px, 10px); }
+  70% { clip-path: var(--slice-2); transform: translate(-10px, 10px); }
+  80% { clip-path: var(--slice-5); transform: translate(20px, -10px); }
+  90% { clip-path: var(--slice-1); transform: translate(-10px, 0px); }
+  100% { clip-path: var(--slice-1); transform: translate(0); }
+}
+
+@media screen and (min-width: 1024px) { 
+
+  .top-picture-info {
+
+    button {
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+      background: linear-gradient(45deg, transparent 5%, yellow 5%);
+      border: 0;
+      color: 	#000;
+      letter-spacing: 3px;
+      line-height: 30px;
+      box-shadow: 6px 0px 0px #d600ff;
+      outline: transparent;
+      position: relative;
+      cursor: default;
+      
+      
+    }
+  
+    .top-landing-left {
+      color: yellow;
+      font-size: 1.5em;
+      padding-left: 1em;
+      position: absolute;
+      top: 15em;
+      // left: 16px;
+    }
+    
+    img {
+      width: 100%;
+      opacity: 0.5;
+      // height: 40em;
+    }
+  
+    .landing-buttons-top {
+      padding-left: 2em;
+      display: flex;
+      flex-direction: row;
+      font-size: 1em;
+      
+  
+      button:nth-child(2) {
+      color: black;
+      font-size: 1em;
+      position: absolute;
+      top: 60em;
+      left: 20em;
+  
+      }
+    }
+  
+    .landing-button {
+      color: black;
+      font-size: 1em;
+      position: absolute;
+      top: 60em;
+      margin-left: 40em;
+  
+      
+    }
+  
+  
+  }
+
+}
