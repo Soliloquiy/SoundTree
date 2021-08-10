@@ -1,5 +1,10 @@
 import React from "react";
+
 import Player from "./Player";
+
+import "./SongsForSubGenre.scss"
+
+
 
 // const genreClass = classNames("genre-list__item", {
 //   "genre-list__item--selected": props.selected,
@@ -12,30 +17,35 @@ export default function SongsForSubGenre(props) {
   if (!props.subGenre) {
     return [];
   } else
-    return (
-      <div>
-        <ul>
-          {props.songs.map((item) => {
-            return (
-              <div className="App">
-                <br></br>
-                <li key={item.id}>{item.name}</li>
-                {item.songs.map((song) => (
-                  <div>
-                    <li key={song.id}>
-                      Song Name: {song.name}
-                      Song Artist: {song.artist}
-                      Song Album: {song.album}
-                    </li>
-                  </div>
-                ))}
-              </div>
-            );
-          })}
-        </ul>
-        <div className="player">
-          <Player token={props.token} uris={props.uris} />
-        </div>
+
+  return (
+    <div>
+      <ul>
+        {props.songs.map((item) => {
+          return (
+            <div className="discover-music-list">
+              <br></br>
+              <li key={item.id}>
+                <span className="neon">
+                  {item.name}
+                </span>
+              </li>
+              { item.songs.map((song) => 
+              <div className="song-list">
+              <li key={song.id}>
+                <span className="song-name">☢ {song.name} </span>
+                <span className="artist-name"> Artist: </span> {song.artist}
+                <span className="album-name"> Album: </span> {song.album}
+              </li>
+              </div>)}
+            </div>
+          );
+        })}
+      </ul>
+      <div className="player">
+         <Player token={props.token} uris={props.uris} />
       </div>
-    );
+    </div>
+  );
 }
+

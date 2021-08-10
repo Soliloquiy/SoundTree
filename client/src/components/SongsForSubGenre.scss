@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+
+.discover-music-list {
+  width: 85%;
+  margin-left: 15%;
+  font-family: "Tomorrow";
+  color: #fff ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .discover-music-list, li, .song-list {
+    list-style: none;
+
+    span, .song-name {
+      color: lightblue
+    }
+    span, .artist-name {
+      color: yellowgreen;
+    }
+    span, .album-name {
+      color: lightcoral;
+    }
+  }
+
+}
+
+.song-list {
+  padding: 1em;
+  margin: 1em 0;
+  position: relative;
+  font-size: 1.2rem;
+  color: #0cffe1;
+  border: 30px solid rgb(44, 125, 125);
+  border-right: 5px solid #420B8E;
+  border-left: 5px solid #420B8E;
+  border-bottom: 24px solid #420B8E;
+  background-color: black;
+  clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+}
+.song-list.inverse {
+  border: none;
+  padding: 40px 15px 30px;
+  color: yellow;
+  background-color: var(--yellow-color);
+  border-right: 2px solid var(--border-color);
+}
+.dotted, .dotted:before, .dotted:after {
+  background: var(--yellow-color);
+  background-image: radial-gradient(#00000021 1px, transparent 0);
+  background-size: 5px 5px;
+  background-position: -13px -3px;
+}
+/*Small number style on the right side of the text box*/
+.song-list:before {
+  content: "P-14";
+  display: block;
+  position: absolute;
+  bottom: -12px;
+  right: 25px;
+  padding: 2px 2px 0px 2px;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
+  color: yellow;
+  background-color: var(--yellow-color);
+  border-left: 2px solid var(--border-color);
+}
+.song-list.inverse:before {
+  content: "T-71";
+  right: 90px;
+  bottom: 9px;
+}
+.song-list.inverse:before, .song-list:before {
+  background-color: #000;
+  color: var(--yellow-color);
+}
+
+.neon {
+  text-shadow: 0 0 3vw #F4BD0A;
+  animation: neon 2s ease-in-out infinite;
+  font-size: 24px;
+}
+
+@keyframes neon {
+  0%, 100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FFFC00;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
