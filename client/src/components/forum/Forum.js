@@ -178,11 +178,11 @@ export default function Forum(props) {
   console.log(props.currentUserId)
 
   return (
-    <div className="forum-index-page">
+    <main className="forum-index-page">
       <ForumGenreList setGenre={setForumGenre} genres={state.forumGenres} />
       <ForumSubGenreList userId={props.currentUserId} setSubGenre={setForumSubGenre} genre={state.forumGenre} genres={[currentForumSubGenres]} />
       <ForumPostsList setPost={setPost} setForumSubGenre={setForumSubGenre} setForumGenre={setForumGenre} genre={state.forumGenre} currentUserAvatar={props.currentUserAvatar} userId={props.currentUserId} subGenre={state.forumSubGenre} posts={[state.forumPostsForGenre]} />
-    </div>
+    </main>
     
   )
 };

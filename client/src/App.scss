@@ -57,16 +57,10 @@ border-bottom: 1px solid teal;
     color: teal !important;
     font-family: Tomorrow !important;
     // margin-right: 10em !important;
-    margin-bottom: -2.6em;
     padding-top: -10em !important;
-    padding-bottom: 3.8rem !important;
+    padding-bottom: -5rem !important;
     margin-left: -7em;
   }
-
-  // .navbar-expand .navbar-nav .nav-link {
-  //   padding-right: 2em !important;
-  //   padding-left: 15em;
-  // }
 
   .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
   width: 100%;
@@ -85,7 +79,7 @@ border-bottom: 1px solid teal;
   margin-bottom: 0 !important;
   // padding-bottom: 1em;
   list-style: none;
-  margin-left: 0em;
+  margin-left: 1em;
   // margin-right: -7em;
   gap: 5em;
 }
@@ -93,12 +87,20 @@ border-bottom: 1px solid teal;
 .navbar {
   color:          red;                        
   font-family:    Garamond;
-  font-size:      1.3em;
-  padding:        5px 10em;
+  font-size:      1.1em;
+  padding:        5px 0px;
+  // padding-top: 1em !important;
   display: flex;
   justify-content: space-between;
+  // position: absolute !important;
   
   
+  }
+
+  .navbar-expand .navbar-nav .nav-link {
+    padding-right: 0em !important;
+    padding-left: 2em !important;
+    // padding-bottom: 0.5em !important;
   }
 
 }

@@ -67,10 +67,11 @@ export default function App() {
       <div>
         <Navbar variant="dark" className="navigation-bar" Text style={{ fontFamily: 'test' }} sticky="top">
           <Container>
-            <Navbar.Brand href="/">SoundTree</Navbar.Brand>
+            {/* <Navbar.Brand href="/">SoundTree</Navbar.Brand> */}
             <Nav>
-              <Nav.Link href="/forum">Forum</Nav.Link>
+              <Nav.Link href="/">SoundTree</Nav.Link>
               <Nav.Link href="/discover">Discover</Nav.Link>
+              <Nav.Link href="/forum">Forum</Nav.Link>
               <Nav.Link href="/articles">Latest News</Nav.Link>
             </Nav>
            
