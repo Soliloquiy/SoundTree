@@ -12,6 +12,12 @@ border-bottom: 1px solid teal;
 
 }
 
+.home-icon {
+  content:url("homeicon.png");
+  height: 4em;
+}
+
+
 .navbar-dark .navbar-nav .nav-link {
   color: teal !important;
   font-family: Tomorrow !important;
@@ -101,6 +107,16 @@ border-bottom: 1px solid teal;
     padding-right: 0em !important;
     padding-left: 2em !important;
     // padding-bottom: 0.5em !important;
+  }
+
+
+
+  .home-icon {
+    content:url("homeicon.png");
+    height: 2.5em;
+    margin-left: 0em;
+    margin-right: -6em;
+    background-color: teal;
   }
 
 }
