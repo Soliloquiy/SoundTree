@@ -82,7 +82,8 @@ export default function Form(props) {
         // window.location.reload(false);
         setState((prev) => ({
           ...prev,
-          post: state.comment
+          post: state.comment,
+          comment: ""
         }));
         
         console.log(state.post)
