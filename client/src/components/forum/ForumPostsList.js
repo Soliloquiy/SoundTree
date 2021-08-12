@@ -56,7 +56,7 @@ export default function ForumPostsList(props) {
               </div>
               <div key={item.id+4} className="post-content">
                 <p key={item.id+5} >{item.comment}</p>
-                {props.userId ? (
+                {props.userId && props.userId != item.user.id ? (
                   <LikeCount key={item.id+6} post={item} />
                 ) : (
                   <div> </div>
